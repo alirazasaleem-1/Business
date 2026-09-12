@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Data Engineer's Playbook</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        :root {
+            --bg: #030712;
+            --surface: #0f172a;
+            --surface2: #1e293b;
+            --border: #334155;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #6366f1; /* Indigo */
+            --blue: #3b82f6;
+            --cyan: #06b6d4;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 15px; }
+
+        @media print {
+            body { background: white; color: #1a1a1a; }
+            .page-break { page-break-before: always; }
+            pre { background: #f1f5f9 !important; color: #0f172a !important; border: 1px solid #cbd5e1 !important; }
+            code { background: #e2e8f0 !important; color: #0f172a !important; }
+            .cover { background: linear-gradient(135deg, #1e1b4b, #020617) !important; color: white !important; }
+            .tip-box { border-color: #6366f1 !important; background: #eef2ff !important; color: #1a1a1a !important; }
+        }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+        /* COVER */
+        .cover {
+            min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            padding: 60px 40px; background: linear-gradient(135deg, #312e81 0%, #020617 50%, #030712 100%);
+        }
+        .cover-badge { display: inline-block; padding: 8px 20px; border: 1px solid rgba(99, 102, 241, 0.4); border-radius: 50px; color: #818cf8; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; }
+        .cover h1 { font-size: 52px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .cover h1 span { color: #818cf8; }
+        .cover p.subtitle { font-weight: 600; color: #cbd5e1; margin-bottom: 40px; }
+        .cover p { font-size: 18px; color: #94a3b8; max-width: 550px; margin-bottom: 15px; }
+        .cover-footer { color: #475569; font-size: 13px; margin-top: 40px; }
+        .cover-footer strong { color: #94a3b8; }
+
+        /* CHAPTER HEADERS */
+        .chapter-header { padding: 80px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+        .chapter-number { font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; }
+        .chapter-header h2 { font-size: 36px; font-weight: 800; letter-spacing: -0.5px; }
+        
+        /* CONTENT */
+        h3 { font-size: 22px; font-weight: 700; margin: 40px 0 16px; letter-spacing: -0.3px; }
+        p { margin-bottom: 16px; color: #cbd5e1; }
+        strong { color: var(--text); }
+        ul, ol { margin: 0 0 20px 24px; color: #cbd5e1; }
+        li { margin-bottom: 8px; }
+
+        pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin: 20px 0 28px; overflow-x: auto; font-family: 'Fira Code', monospace; font-size: 13.5px; line-height: 1.8; color: #c7d2fe; }
+        code { font-family: 'Fira Code', monospace; font-size: 13px; }
+        p code, li code { background: var(--surface2); padding: 2px 8px; border-radius: 5px; border: 1px solid var(--border); font-size: 13px; color: #818cf8; }
+        
+        .tip-box { border-left: 4px solid var(--accent); border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; background: rgba(99, 102, 241, 0.08); }
+        .tip-box::before { content: '💡 Insight: '; font-weight: 700; color: var(--accent); }
+
+        .pdf-footer { text-align: center; padding: 60px 40px; color: var(--text-muted); font-size: 13px; border-top: 1px solid var(--border); }
+    </style>
+</head>
+<body>
+
+<div class="cover">
+    <div class="cover-badge">Data Engineering 101</div>
+    <h1>The Data Engineer's <span>Playbook</span></h1>
+    <p class="subtitle">Building Your First ETL Pipeline from Scratch.</p>
+    <p>A beginner-friendly guide to extracting, transforming, and loading data using Python and PostgreSQL. Stop living in Excel and start engineering.</p>
+    <div class="cover-footer">
+        By <strong>Ali Raza Saleem</strong> &nbsp;•&nbsp; TechKit
+    </div>
+</div>
+
+<div class="container">
+    <div class="page-break">
+        <div class="chapter-header">
+            <div class="chapter-number">Chapter 01</div>
+            <h2>What is Data Engineering?</h2>
+        </div>
+        <p>Before data scientists can train AI models or analysts can build beautiful dashboards, someone has to collect, clean, and store the data. That person is the <strong>Data Engineer</strong>.</p>
+        <p>If data is water, data engineers build the pipes, reservoirs, and filtration systems.</p>
+        <p>In this guide, you will learn the core concept of data engineering: <strong>ETL</strong>.</p>
+        <ul>
+            <li><strong>Extract:</strong> Pull data from an API, website, or CSV.</li>
+            <li><strong>Transform:</strong> Clean the data, remove errors, and format it.</li>
+            <li><strong>Load:</strong> Save it securely into a Database (like PostgreSQL).</li>
+        </ul>
+    </div>
+
+    <div class="page-break">
+        <div class="chapter-header">
+            <div class="chapter-number">Chapter 02</div>
+            <h2>Setting Up Your Tools</h2>
+        </div>
+        <p>We will use <strong>Python</strong> to write our scripts and <strong>SQLite</strong> (a lightweight built-in database) to store our data, so you don't have to install heavy database servers yet.</p>
+        
+        <h3>Required Python Libraries</h3>
+        <p>Open your terminal and install Pandas (the ultimate data manipulation library):</p>
+        <pre><code>pip install pandas requests</code></pre>
+
+        <div class="tip-box">Pandas is the industry standard for transforming data in Python. It allows you to treat data like a highly-powered Excel spreadsheet in code.</div>
+    </div>
+
+    <div class="page-break">
+        <div class="chapter-header">
+            <div class="chapter-number">Chapter 03</div>
+            <h2>Your First ETL Script</h2>
+        </div>
+        <p>Let's build a script that <strong>Extracts</strong> dummy user data from a free API, <strong>Transforms</strong> it to only keep what we need, and <strong>Loads</strong> it into a database.</p>
+        
+        <pre><code>import requests
+import pandas as pd
+import sqlite3
+
+# 1. EXTRACT
+print("Extracting data...")
+response = requests.get("https://jsonplaceholder.typicode.com/users")
+data = response.json()
+
+# 2. TRANSFORM
+print("Transforming data...")
+df = pd.DataFrame(data)
+# Keep only specific columns
+df = df[['id', 'name', 'email', 'phone']]
+# Clean phone numbers (remove extensions)
+df['phone'] = df['phone'].str.split('x').str[0].str.strip()
+# Convert names to uppercase
+df['name'] = df['name'].str.upper()
+
+# 3. LOAD
+print("Loading into Database...")
+conn = sqlite3.connect("users_db.sqlite")
+# Save dataframe to a SQL table called 'users'
+df.to_sql("users", conn, if_exists="replace", index=False)
+conn.close()
+
+print("✅ ETL Pipeline Completed Successfully!")</code></pre>
+
+        <p>Run this script, and it will instantly create a <code>users_db.sqlite</code> database file on your computer containing the cleaned data!</p>
+    </div>
+
+    <div class="page-break">
+        <div class="chapter-header">
+            <div class="chapter-number">Chapter 04</div>
+            <h2>Querying Your Database</h2>
+        </div>
+        <p>Now that your data is loaded, let's write a quick script to read it back using SQL.</p>
+
+        <pre><code>import sqlite3
+import pandas as pd
+
+conn = sqlite3.connect("users_db.sqlite")
+
+# Run a SQL Query
+query = "SELECT name, email FROM users LIMIT 3"
+result_df = pd.read_sql(query, conn)
+
+print(result_df)
+conn.close()</code></pre>
+        
+        <div class="tip-box">In the real world, you would connect to a cloud database like Snowflake, BigQuery, or Amazon Redshift. The Python code is almost exactly the same!</div>
+    </div>
+
+    <div class="page-break">
+        <div class="chapter-header">
+            <div class="chapter-number">Chapter 05</div>
+            <h2>Next Steps</h2>
+        </div>
+        <p>Congratulations! You just built a functional ETL pipeline.</p>
+        <p>To become a professional Data Engineer, here is what you should learn next:</p>
+        <ul>
+            <li><strong>Advanced SQL:</strong> Learn Joins, Window Functions, and CTEs.</li>
+            <li><strong>Cloud Data Warehouses:</strong> Learn Google BigQuery or Snowflake.</li>
+            <li><strong>Orchestration:</strong> Learn Apache Airflow to run your scripts on a schedule automatically.</li>
+            <li><strong>Big Data Tools:</strong> Learn Apache Spark for processing millions of rows.</li>
+        </ul>
+    </div>
+
+    <div class="pdf-footer page-break">
+        <p><strong>The Data Engineer's Playbook</strong></p>
+        <p>© 2024 Ali Raza Saleem &nbsp;•&nbsp; TechKit</p>
+        <p style="margin-top:10px;">All content is provided as-is for educational purposes.</p>
+    </div>
+</div>
+
+</body>
+</html>

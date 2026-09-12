@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FREE SAMPLE — The Sandbox Hacker</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap');
+        :root { --bg: #050505; --surface: #0f0f0f; --surface2: #161616; --border: #222; --text: #e0e0e0; --accent: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 15px; }
+        @media print {
+            body { background: white; color: #1a1a1a; }
+            .page-break { page-break-before: always; }
+            .cover { background: linear-gradient(135deg, #022c22, #050505) !important; color: white !important; }
+            .cta-page { background: linear-gradient(135deg, #064e3b, #050505) !important; color: white !important; }
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px 40px; background: linear-gradient(135deg, #064e3b 0%, #020617 50%, #050505 100%); }
+        .cover-badge { display: inline-block; padding: 8px 20px; border: 1px solid rgba(16, 185, 129, 0.4); border-radius: 50px; color: #34d399; font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 40px; }
+        .cover h1 { font-size: 52px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .cover h1 span { color: #10b981; }
+        .chapter-header { padding: 80px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+        .chapter-number { font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; }
+        .chapter-header h2 { font-size: 36px; font-weight: 800; letter-spacing: -0.5px; }
+        h3 { font-size: 22px; font-weight: 700; margin: 40px 0 16px; letter-spacing: -0.3px; }
+        p { margin-bottom: 16px; color: #bbb; }
+        strong { color: var(--text); }
+        ol, ul { margin: 0 0 20px 24px; color: #bbb; }
+        li { margin-bottom: 8px; }
+        .warning-box { border-left: 4px solid #f59e0b; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; background: rgba(245, 158, 11, 0.08); }
+        .locked-chapter { padding: 50px 30px; text-align: center; border: 2px dashed #2a2a2a; border-radius: 16px; margin: 30px 0; }
+        .locked-chapter h4 { font-size: 20px; margin-bottom: 8px; color: #888; }
+        .cta-page { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px 40px; background: linear-gradient(135deg, #064e3b 0%, #050505 100%); }
+        .cta-page h2 { font-size: 36px; font-weight: 800; margin-bottom: 16px; }
+        .cta-btn { display: inline-block; padding: 16px 40px; background: #10b981; color: black; font-weight: 700; border-radius: 10px; text-decoration: none; font-size: 16px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="cover">
+    <div class="cover-badge">⭐ Free Sample — 2 Chapters</div>
+    <h1>The Sandbox <span>Hacker</span></h1>
+    <p style="font-size: 18px; color: #94a3b8; max-width: 550px;">Preview 2 full chapters from the complete guide. Set Up Kali Linux, Master the Terminal, and Practice Safely at Home.</p>
+</div>
+
+<div class="container">
+    <div class="page-break">
+        <div class="chapter-header">
+            <div class="chapter-number">Chapter 01 — Free Preview</div>
+            <h2>Why You Need a Cyber Lab</h2>
+        </div>
+        <p>If you want to learn how hackers break into systems, you can't just read about it—you have to practice. But practicing on your own home network or public websites is incredibly dangerous (and illegal).</p>
+        <p>That is where a <strong>Cyber Lab</strong> comes in.</p>
+        <p>A cyber lab (or sandbox) is a simulated, isolated environment running entirely within your current computer. If you accidentally download malware or break a system in your lab, it cannot escape and harm your real computer. You just click "Reset" and start over.</p>
+    </div>
+
+    <div class="page-break">
+        <div class="chapter-header">
+            <div class="chapter-number">Chapter 02 — Free Preview</div>
+            <h2>Installing VirtualBox</h2>
+        </div>
+        <p>To build a lab, we need a <strong>Hypervisor</strong>. This is software that lets you run multiple "virtual computers" (Virtual Machines or VMs) inside your main computer.</p>
+        <p>We will use Oracle VM VirtualBox because it is powerful and 100% free.</p>
+        
+        <h3>Step-by-Step Installation:</h3>
+        <ol>
+            <li>Go to <strong>virtualbox.org/wiki/Downloads</strong>.</li>
+            <li>Click on "Windows hosts" (or macOS/Linux depending on your system).</li>
+            <li>Run the installer and click "Next" through the default options.</li>
+            <li>Once installed, open VirtualBox. You are now ready to add virtual machines!</li>
+        </ol>
+
+        <div class="warning-box">You may need to enable <strong>Hardware Virtualization (VT-x / AMD-V)</strong> in your computer's BIOS settings if VirtualBox gives you an error when starting a machine.</div>
+    </div>
+
+    <div class="page-break">
+        <div class="chapter-header">
+            <div class="chapter-number">Remaining Chapters</div>
+            <h2>3 More Chapters in the Full Guide</h2>
+        </div>
+        <div class="locked-chapter">
+            <h4 style="color:#10b981;">🔒 Chapter 03 — Setting Up Kali Linux</h4>
+            <p style="color:#888;">Download and import the hacker's OS into your lab.</p>
+        </div>
+        <div class="locked-chapter">
+            <h4 style="color:#10b981;">🔒 Chapter 04 — Mastering the Terminal</h4>
+            <p style="color:#888;">Learn the essential Linux commands to navigate like a pro.</p>
+        </div>
+        <div class="locked-chapter">
+            <h4 style="color:#10b981;">🔒 Chapter 05 — Your First Network Scan</h4>
+            <p style="color:#888;">Use Nmap to discover open ports and vulnerabilities safely.</p>
+        </div>
+    </div>
+</div>
+
+<div class="cta-page page-break">
+    <p style="font-size:48px; margin-bottom:20px;">🚀</p>
+    <h2>Enjoyed the sample?</h2>
+    <p style="color: #94a3b8; max-width: 480px; margin-bottom: 10px;">Get the full Sandbox Hacker ebook for just <strong style="color:white;">PKR 280</strong>.</p>
+    <a href="https://wa.me/923467282874?text=Hi%20Ali!%20I%20want%20to%20buy%20The%20Sandbox%20Hacker%20ebook%20for%20PKR%20280." class="cta-btn">Buy Full Guide — PKR 280</a>
+</div>
+
+</body>
+</html>

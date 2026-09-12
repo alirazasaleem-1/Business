@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FREE SAMPLE — The Data Engineer's Playbook</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&display=swap');
+        :root { --bg: #030712; --surface: #0f172a; --surface2: #1e293b; --border: #334155; --text: #f8fafc; --accent: #6366f1; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 15px; }
+        @media print {
+            body { background: white; color: #1a1a1a; }
+            .page-break { page-break-before: always; }
+            pre { background: #f1f5f9 !important; color: #0f172a !important; border: 1px solid #cbd5e1 !important; }
+            code { background: #e2e8f0 !important; color: #0f172a !important; }
+            .cover { background: linear-gradient(135deg, #1e1b4b, #020617) !important; color: white !important; }
+            .cta-page { background: linear-gradient(135deg, #312e81, #020617) !important; color: white !important; }
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px 40px; background: linear-gradient(135deg, #312e81 0%, #020617 50%, #030712 100%); }
+        .cover-badge { display: inline-block; padding: 8px 20px; border: 1px solid rgba(99, 102, 241, 0.4); border-radius: 50px; color: #818cf8; font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 40px; }
+        .cover h1 { font-size: 52px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .cover h1 span { color: #818cf8; }
+        .chapter-header { padding: 80px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+        .chapter-number { font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; }
+        .chapter-header h2 { font-size: 36px; font-weight: 800; letter-spacing: -0.5px; }
+        h3 { font-size: 22px; font-weight: 700; margin: 40px 0 16px; letter-spacing: -0.3px; }
+        p { margin-bottom: 16px; color: #cbd5e1; }
+        strong { color: var(--text); }
+        ol, ul { margin: 0 0 20px 24px; color: #cbd5e1; }
+        li { margin-bottom: 8px; }
+        pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin: 20px 0 28px; overflow-x: auto; font-family: 'Fira Code', monospace; font-size: 13.5px; line-height: 1.8; color: #c7d2fe; }
+        code { font-family: 'Fira Code', monospace; font-size: 13px; }
+        .tip-box { border-left: 4px solid var(--accent); border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; background: rgba(99, 102, 241, 0.08); }
+        .locked-chapter { padding: 50px 30px; text-align: center; border: 2px dashed #334155; border-radius: 16px; margin: 30px 0; }
+        .locked-chapter h4 { font-size: 20px; margin-bottom: 8px; color: #94a3b8; }
+        .cta-page { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px 40px; background: linear-gradient(135deg, #312e81 0%, #030712 100%); }
+        .cta-page h2 { font-size: 36px; font-weight: 800; margin-bottom: 16px; }
+        .cta-btn { display: inline-block; padding: 16px 40px; background: white; color: black; font-weight: 700; border-radius: 10px; text-decoration: none; font-size: 16px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="cover">
+    <div class="cover-badge">⭐ Free Sample — 2 Chapters</div>
+    <h1>The Data Engineer's <span>Playbook</span></h1>
+    <p style="font-size: 18px; color: #94a3b8; max-width: 550px;">Preview 2 full chapters from the complete guide. Building Your First ETL Pipeline from Scratch.</p>
+</div>
+
+<div class="container">
+    <div class="page-break">
+        <div class="chapter-header">
+            <div class="chapter-number">Chapter 01 — Free Preview</div>
+            <h2>What is Data Engineering?</h2>
+        </div>
+        <p>Before data scientists can train AI models or analysts can build beautiful dashboards, someone has to collect, clean, and store the data. That person is the <strong>Data Engineer</strong>.</p>
+        <p>If data is water, data engineers build the pipes, reservoirs, and filtration systems.</p>
+        <p>In this guide, you will learn the core concept of data engineering: <strong>ETL</strong>.</p>
+        <ul>
+            <li><strong>Extract:</strong> Pull data from an API, website, or CSV.</li>
+            <li><strong>Transform:</strong> Clean the data, remove errors, and format it.</li>
+            <li><strong>Load:</strong> Save it securely into a Database (like PostgreSQL).</li>
+        </ul>
+    </div>
+
+    <div class="page-break">
+        <div class="chapter-header">
+            <div class="chapter-number">Chapter 02 — Free Preview</div>
+            <h2>Setting Up Your Tools</h2>
+        </div>
+        <p>We will use <strong>Python</strong> to write our scripts and <strong>SQLite</strong> (a lightweight built-in database) to store our data, so you don't have to install heavy database servers yet.</p>
+        
+        <h3>Required Python Libraries</h3>
+        <p>Open your terminal and install Pandas (the ultimate data manipulation library):</p>
+        <pre><code>pip install pandas requests</code></pre>
+
+        <div class="tip-box"><strong>💡 Insight:</strong> Pandas is the industry standard for transforming data in Python. It allows you to treat data like a highly-powered Excel spreadsheet in code.</div>
+    </div>
+
+    <div class="page-break">
+        <div class="chapter-header">
+            <div class="chapter-number">Remaining Chapters</div>
+            <h2>3 More Chapters in the Full Guide</h2>
+        </div>
+        <div class="locked-chapter">
+            <h4 style="color:#818cf8;">🔒 Chapter 03 — Your First ETL Script</h4>
+            <p style="color:#94a3b8;">Write the Python code to Extract, Transform, and Load data automatically.</p>
+        </div>
+        <div class="locked-chapter">
+            <h4 style="color:#818cf8;">🔒 Chapter 04 — Querying Your Database</h4>
+            <p style="color:#94a3b8;">Learn how to run SQL queries on the data you just loaded.</p>
+        </div>
+        <div class="locked-chapter">
+            <h4 style="color:#818cf8;">🔒 Chapter 05 — Next Steps</h4>
+            <p style="color:#94a3b8;">A learning path to advance to Cloud Data Warehouses and Orchestration tools.</p>
+        </div>
+    </div>
+</div>
+
+<div class="cta-page page-break">
+    <p style="font-size:48px; margin-bottom:20px;">🚀</p>
+    <h2>Ready to start engineering?</h2>
+    <p style="color: #94a3b8; max-width: 480px; margin-bottom: 10px;">Get the full Data Engineer's Playbook for just <strong style="color:white;">PKR 280</strong>.</p>
+    <a href="https://wa.me/923467282874?text=Hi%20Ali!%20I%20want%20to%20buy%20The%20Data%20Engineer%20Playbook%20for%20PKR%20280." class="cta-btn">Buy Full Guide — PKR 280</a>
+</div>
+
+</body>
+</html>
