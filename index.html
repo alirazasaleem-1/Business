@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Automation & Tech Starter Kit — Ali Raza Saleem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Satoshi', 'sans-serif'],
+                    },
+                    colors: {
+                        easypaisa: '#00c984'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #030712;
+            color: #f9fafb;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(90deg, #fff, #71717a);
+        }
+        .text-gradient-blue {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col selection:bg-blue-500/30">
+
+    <!-- Navbar -->
+    <header class="w-full max-w-5xl mx-auto px-6 py-6 flex justify-between items-center border-b border-white/10">
+        <div class="font-bold text-xl tracking-tight flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+            </div>
+            TechKit
+        </div>
+        <nav class="flex items-center gap-6">
+            <a href="#free-sample" class="text-sm font-medium text-gray-400 hover:text-white transition-colors hidden sm:inline">Free Sample</a>
+            <a href="#whats-inside" class="text-sm font-medium text-gray-400 hover:text-white transition-colors hidden sm:inline">What's Inside</a>
+            <a href="#buy-now" class="text-sm font-medium bg-white text-black px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">Buy Now</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow w-full max-w-5xl mx-auto px-6 pt-20 pb-24">
+        
+        <!-- Hero Section -->
+        <section class="flex flex-col items-center text-center mb-32 pt-8 relative">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-600/15 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-8">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                Digital PDF Guide + Ready-to-Use Python Scripts
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 max-w-4xl text-gradient">
+                Automate Your Workflow.<br/>
+                <span class="text-gradient-blue">Master Python Today.</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mb-4 leading-relaxed">
+                A <strong class="text-white">50+ page PDF ebook</strong> with <strong class="text-white">10 ready-to-use Python automation scripts</strong> — from file organizers to web scrapers, WhatsApp bots to email senders. Copy, paste, run.
+            </p>
+            <p class="text-sm text-gray-500 mb-10">
+                Created by <strong class="text-gray-300">Ali Raza Saleem</strong> &nbsp;•&nbsp; For students & tech enthusiasts
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+                <a href="#buy-now" class="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition-all shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] hover:scale-[1.02] active:scale-[0.98]">
+                    Get the Kit — PKR 500
+                </a>
+                <a href="#free-sample" class="px-8 py-4 bg-transparent text-yellow-300 font-semibold rounded-lg border border-yellow-500/40 hover:border-yellow-400 hover:bg-yellow-500/10 transition-all">
+                    ⭐ Try Free Sample
+                </a>
+            </div>
+        </section>
+
+        <!-- What You Get (Clear Summary) -->
+        <section class="mb-32">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What Exactly Do You Get?</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">One payment. Instant download. Everything you need to start automating with Python.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-8 rounded-2xl flex flex-col items-start hover:border-gray-600 transition-colors">
+                    <div class="w-12 h-12 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center mb-6 text-2xl">📄</div>
+                    <h3 class="text-xl font-bold mb-2">50+ Page PDF Ebook</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">A professionally designed, dark-themed PDF guide with clear explanations, step-by-step instructions, and visual outputs for every script.</p>
+                </div>
+                
+                <div class="glass-card p-8 rounded-2xl flex flex-col items-start hover:border-gray-600 transition-colors">
+                    <div class="w-12 h-12 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center mb-6 text-2xl">💻</div>
+                    <h3 class="text-xl font-bold mb-2">10 Python Scripts</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Ready-to-use, copy-paste automation scripts. No complex setup — just run and watch them work. All code is fully commented.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl flex flex-col items-start hover:border-gray-600 transition-colors">
+                    <div class="w-12 h-12 rounded-lg bg-green-500/20 text-green-400 flex items-center justify-center mb-6 text-2xl">🚀</div>
+                    <h3 class="text-xl font-bold mb-2">Instant Access</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Pay via EasyPaisa, send screenshot, and receive your download link within minutes. No waiting, no complicated checkout.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FREE SAMPLE Section -->
+        <section id="free-sample" class="mb-32">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Try Before You Buy ⭐</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Don't just take our word for it. Download 2 full chapters for free and see the quality yourself.</p>
+            </div>
+
+            <!-- Sample Preview Card -->
+            <div class="max-w-3xl mx-auto">
+                <div class="glass-card rounded-2xl overflow-hidden border-yellow-500/20 hover:border-yellow-500/40 transition-colors">
+                    <!-- Header -->
+                    <div class="bg-yellow-500/10 border-b border-yellow-500/20 px-6 py-4 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">📄</span>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Free Sample — 2 Chapters</h3>
+                                <p class="text-sm text-gray-400">Preview the actual content before purchasing</p>
+                            </div>
+                        </div>
+                        <span class="bg-yellow-500 text-black text-xs font-bold px-3 py-1.5 rounded uppercase">Free</span>
+                    </div>
+
+                    <!-- What's in the sample -->
+                    <div class="p-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div class="flex items-start gap-3 p-4 bg-white/[0.02] rounded-xl">
+                                <span class="text-green-400 mt-0.5">✓</span>
+                                <div>
+                                    <p class="font-semibold text-white text-sm">Chapter 1: Getting Started</p>
+                                    <p class="text-xs text-gray-500 mt-1">Install Python, VS Code setup, your first script</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-4 bg-white/[0.02] rounded-xl">
+                                <span class="text-green-400 mt-0.5">✓</span>
+                                <div>
+                                    <p class="font-semibold text-white text-sm">Chapter 2: Auto-Organize Files</p>
+                                    <p class="text-xs text-gray-500 mt-1">Full working script to sort your messy folders</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Code Preview Snippet -->
+                        <div class="bg-[#0d1117] rounded-xl p-5 mb-6 border border-[#1c2633] overflow-x-auto">
+                            <p class="text-xs text-gray-500 mb-3 font-semibold uppercase tracking-wide">Preview from Chapter 2 — file_organizer.py</p>
+                            <pre class="text-sm leading-relaxed" style="font-family: 'Courier New', monospace; margin:0; padding:0; background:transparent; border:none;"><code><span style="color:#7ee787">import</span> <span style="color:#d2a8ff">os</span>
+<span style="color:#7ee787">import</span> <span style="color:#d2a8ff">shutil</span>
+
+<span style="color:#8b949e"># Automatically sorts files into folders</span>
+CATEGORIES = {
+    <span style="color:#a5d6ff">"Images"</span>:    [<span style="color:#a5d6ff">".jpg"</span>, <span style="color:#a5d6ff">".png"</span>, <span style="color:#a5d6ff">".gif"</span>],
+    <span style="color:#a5d6ff">"Documents"</span>: [<span style="color:#a5d6ff">".pdf"</span>, <span style="color:#a5d6ff">".docx"</span>, <span style="color:#a5d6ff">".txt"</span>],
+    <span style="color:#a5d6ff">"Videos"</span>:    [<span style="color:#a5d6ff">".mp4"</span>, <span style="color:#a5d6ff">".mkv"</span>],
+    <span style="color:#8b949e"># ... and more in the full script</span>
+}</code></pre>
+                        </div>
+
+                        <!-- Free vs Full comparison -->
+                        <div class="grid grid-cols-2 gap-4 mb-6 text-sm">
+                            <div class="p-4 bg-white/[0.02] rounded-xl border border-white/5">
+                                <p class="font-bold text-yellow-400 mb-2">⭐ Free Sample</p>
+                                <ul class="space-y-1.5 text-gray-400">
+                                    <li>• 2 chapters</li>
+                                    <li>• 2 scripts</li>
+                                    <li>• Basic setup guide</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 bg-blue-500/5 rounded-xl border border-blue-500/20">
+                                <p class="font-bold text-blue-400 mb-2">🚀 Full Kit — PKR 500</p>
+                                <ul class="space-y-1.5 text-gray-400">
+                                    <li>• <strong class="text-white">10 chapters</strong></li>
+                                    <li>• <strong class="text-white">10 scripts</strong></li>
+                                    <li>• WhatsApp, Email, Web Scraping & more</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Download Button -->
+                        <a href="./Free_Sample_Preview.html" target="_blank" rel="noopener noreferrer" class="block w-full py-4 px-6 bg-yellow-500 hover:bg-yellow-400 text-black text-center font-bold rounded-lg transition-colors shadow-[0_0_30px_-5px_rgba(234,179,8,0.3)]">
+                            📥 Download Free Sample (2 Chapters)
+                        </a>
+                        <p class="text-center text-xs text-gray-500 mt-3">No payment required. Opens in a new tab — save as PDF with Ctrl+P.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What's Inside (Full Chapter Breakdown) -->
+        <section id="whats-inside" class="mb-32">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Full Chapter Breakdown</h2>
+                <p class="text-gray-400">Here's every chapter and script included in the kit.</p>
+            </div>
+
+            <div class="glass-card rounded-2xl overflow-hidden">
+                <!-- Chapter List -->
+                <div class="divide-y divide-white/5">
+                    <div class="flex items-start gap-4 p-5 md:p-6 hover:bg-white/[0.02] transition-colors">
+                        <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-sm">01</span>
+                        <div>
+                            <h4 class="font-bold text-white">Getting Started with Python</h4>
+                            <p class="text-sm text-gray-500 mt-1">Install Python, set up VS Code, and run your first script in 5 minutes.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-5 md:p-6 hover:bg-white/[0.02] transition-colors">
+                        <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-sm">02</span>
+                        <div>
+                            <h4 class="font-bold text-white">Auto-Organize Your Files</h4>
+                            <p class="text-sm text-gray-500 mt-1">Automatically sort your messy Downloads folder — images, PDFs, videos, each into its own folder.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-5 md:p-6 hover:bg-white/[0.02] transition-colors">
+                        <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-sm">03</span>
+                        <div>
+                            <h4 class="font-bold text-white">Bulk Rename Files Like a Pro</h4>
+                            <p class="text-sm text-gray-500 mt-1">Rename 100s of files in one click. Perfect for photos, assignments, or project files.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-5 md:p-6 hover:bg-white/[0.02] transition-colors">
+                        <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-sm">04</span>
+                        <div>
+                            <h4 class="font-bold text-white">Web Scraping — Extract Data from Websites</h4>
+                            <p class="text-sm text-gray-500 mt-1">Pull headlines, prices, or any data from any website automatically using BeautifulSoup.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-5 md:p-6 hover:bg-white/[0.02] transition-colors">
+                        <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-green-500/20 text-green-400 flex items-center justify-center font-bold text-sm">05</span>
+                        <div>
+                            <h4 class="font-bold text-white">Automate WhatsApp Messages</h4>
+                            <p class="text-sm text-gray-500 mt-1">Schedule and send WhatsApp messages to contacts or groups at any time.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-5 md:p-6 hover:bg-white/[0.02] transition-colors">
+                        <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-green-500/20 text-green-400 flex items-center justify-center font-bold text-sm">06</span>
+                        <div>
+                            <h4 class="font-bold text-white">Email Automation with Python</h4>
+                            <p class="text-sm text-gray-500 mt-1">Send professional emails programmatically — great for notifications & newsletters.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-5 md:p-6 hover:bg-white/[0.02] transition-colors">
+                        <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-yellow-500/20 text-yellow-400 flex items-center justify-center font-bold text-sm">07</span>
+                        <div>
+                            <h4 class="font-bold text-white">PDF Merger & Splitter Tool</h4>
+                            <p class="text-sm text-gray-500 mt-1">Combine multiple PDFs into one, or extract specific pages from a large document.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-5 md:p-6 hover:bg-white/[0.02] transition-colors">
+                        <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-yellow-500/20 text-yellow-400 flex items-center justify-center font-bold text-sm">08</span>
+                        <div>
+                            <h4 class="font-bold text-white">Password Generator Script</h4>
+                            <p class="text-sm text-gray-500 mt-1">Generate strong, random passwords instantly. Never use a weak password again.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-5 md:p-6 hover:bg-white/[0.02] transition-colors">
+                        <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-red-500/20 text-red-400 flex items-center justify-center font-bold text-sm">09</span>
+                        <div>
+                            <h4 class="font-bold text-white">System Info & Health Monitor</h4>
+                            <p class="text-sm text-gray-500 mt-1">Check CPU, RAM, disk usage, and battery health in a clean terminal dashboard.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-5 md:p-6 hover:bg-white/[0.02] transition-colors">
+                        <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-red-500/20 text-red-400 flex items-center justify-center font-bold text-sm">10</span>
+                        <div>
+                            <h4 class="font-bold text-white">Next Steps & Resources</h4>
+                            <p class="text-sm text-gray-500 mt-1">Curated list of free resources, communities, and project ideas to keep learning.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Bar -->
+            <div class="mt-6 flex flex-wrap justify-center gap-4 text-sm">
+                <span class="px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] text-gray-300">📄 50+ Pages</span>
+                <span class="px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] text-gray-300">💻 10 Scripts</span>
+                <span class="px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] text-gray-300">🎓 Beginner-Friendly</span>
+                <span class="px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] text-gray-300">⚡ Instant Download</span>
+            </div>
+        </section>
+
+        <!-- Who Is This For -->
+        <section class="mb-32">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Who Is This For?</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <div class="glass-card p-6 rounded-2xl">
+                    <p class="text-green-400 font-bold mb-3">✅ Perfect For You If:</p>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>• You're a student or beginner in programming</li>
+                        <li>• You want to automate boring, repetitive tasks</li>
+                        <li>• You learn best from working code, not theory</li>
+                        <li>• You want quick results without months of study</li>
+                        <li>• You want to impress others with your tech skills</li>
+                    </ul>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <p class="text-red-400 font-bold mb-3">❌ Not For You If:</p>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>• You're already an advanced Python developer</li>
+                        <li>• You want deep computer science theory</li>
+                        <li>• You're looking for a university-level course</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Section -->
+        <section id="buy-now" class="max-w-2xl mx-auto mb-32">
+            <div class="glass-card rounded-[2rem] p-1.5 md:p-2 bg-gradient-to-b from-gray-800/50 to-transparent">
+                <div class="bg-gray-950/90 backdrop-blur-xl rounded-[1.6rem] p-8 md:p-12 border border-white/5 shadow-2xl relative overflow-hidden">
+                    
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-easypaisa/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+
+                    <div class="text-center mb-10 relative z-10">
+                        <h2 class="text-3xl font-bold mb-3">Get Your Copy Now</h2>
+                        <p class="text-gray-400">Simple 3-step checkout via EasyPaisa. No card needed.</p>
+                    </div>
+
+                    <!-- What You Get Recap -->
+                    <div class="bg-white/[0.03] border border-white/10 rounded-xl p-5 mb-8 relative z-10">
+                        <p class="text-sm font-bold text-white mb-3">📦 You will receive:</p>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Complete PDF Ebook (50+ pages, 10 chapters)</li>
+                            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> 10 Copy-Paste Python Automation Scripts</li>
+                            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Setup guide for Python & VS Code</li>
+                            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Free resources & next steps guide</li>
+                            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Lifetime access — download anytime</li>
+                        </ul>
+                    </div>
+
+                    <!-- EasyPaisa Details Card -->
+                    <div class="bg-easypaisa/10 border border-easypaisa/30 rounded-xl p-6 mb-10 relative z-10">
+                        <div class="flex items-center justify-between mb-5">
+                            <h3 class="text-easypaisa font-bold text-lg flex items-center gap-2">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M2 10H22" stroke="currentColor" stroke-width="2"/></svg>
+                                EasyPaisa Payment
+                            </h3>
+                            <span class="bg-easypaisa text-black text-xs font-bold px-2.5 py-1.5 rounded uppercase tracking-wide">PKR 500</span>
+                        </div>
+                        <div class="space-y-3.5 text-sm">
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center pb-3 border-b border-easypaisa/20 gap-1">
+                                <span class="text-gray-400">Account Name</span>
+                                <span class="font-bold text-white text-base">Ali Raza Saleem</span>
+                            </div>
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center pt-1 gap-1">
+                                <span class="text-gray-400">Account Number</span>
+                                <span class="font-bold text-white text-xl tracking-wider">03467282874</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instructions -->
+                    <div class="space-y-6 mb-10 relative z-10">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-800 text-gray-300 flex items-center justify-center font-bold text-sm border border-gray-700">1</div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Send Payment</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed">Transfer exactly <strong class="text-white">PKR 500</strong> to the EasyPaisa number above.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-800 text-gray-300 flex items-center justify-center font-bold text-sm border border-gray-700">2</div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Take a Screenshot</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed">Capture a screenshot of the successful transaction screen.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-800 text-gray-300 flex items-center justify-center font-bold text-sm border border-gray-700">3</div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Get Your Download Link</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed">Click the button below to send your receipt. You'll receive the download link within minutes!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <a href="https://wa.me/923467282874?text=Hi%20Ali!%20I%20have%20paid%20PKR%20500%20for%20the%20Python%20Automation%20Starter%20Kit.%20Here%20is%20my%20payment%20screenshot." target="_blank" rel="noopener noreferrer" class="block w-full py-4 px-6 bg-easypaisa hover:bg-[#00b074] text-black text-center font-bold rounded-lg transition-colors shadow-[0_0_30px_-5px_rgba(0,201,132,0.4)] relative z-10">
+                        ✅ I've Paid — Send Receipt on WhatsApp
+                    </a>
+                    <p class="text-center text-xs text-gray-500 mt-4 font-medium relative z-10">Opens WhatsApp chat with Ali Raza Saleem</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About the Author -->
+        <section class="max-w-2xl mx-auto mb-20">
+            <div class="glass-card rounded-2xl p-8 md:p-10 text-center">
+                <div class="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mx-auto mb-5 text-3xl font-bold">AR</div>
+                <h3 class="text-2xl font-bold mb-2">Ali Raza Saleem</h3>
+                <p class="text-gray-500 text-sm mb-4">Creator & Developer</p>
+                <p class="text-gray-400 text-sm leading-relaxed max-w-md mx-auto">
+                    Tech enthusiast and developer passionate about making programming accessible. This kit is designed to help students skip the confusion and start building real automation scripts from day one.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-10 mt-auto bg-gray-950">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                    <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                </div>
+                <p class="text-gray-400 text-sm font-medium">© 2024 Ali Raza Saleem &nbsp;•&nbsp; TechKit</p>
+            </div>
+            <div class="flex gap-6 text-sm font-medium">
+                <a href="#" class="text-gray-500 hover:text-white transition-colors">Terms</a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors">Privacy</a>
+                <a href="https://wa.me/923467282874" target="_blank" class="text-gray-500 hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

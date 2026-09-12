@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FREE SAMPLE — Python Automation & Tech Starter Kit</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #e5e5e5; line-height: 1.7; font-size: 15px; }
+        @media print {
+            body { background: white; color: #1a1a1a; }
+            .page-break { page-break-before: always; }
+            pre { background: #f5f5f5 !important; color: #1a1a1a !important; border: 1px solid #ddd !important; }
+            code { background: #f0f0f0 !important; color: #1a1a1a !important; }
+            .cover { background: linear-gradient(135deg, #1e3a5f, #0a0a0a) !important; color: white !important; }
+            .tip-box { border-color: #3b82f6 !important; background: #eff6ff !important; color: #1a1a1a !important; }
+            .warning-box { border-color: #eab308 !important; background: #fefce8 !important; color: #1a1a1a !important; }
+            .cta-page { background: linear-gradient(135deg, #0f172a, #030712) !important; color: white !important; }
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        .cover {
+            min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            padding: 60px 40px; background: linear-gradient(135deg, #0f172a 0%, #030712 50%, #0c0a1a 100%); position: relative; overflow: hidden;
+        }
+        .cover::before { content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(59,130,246,0.15), transparent 70%); border-radius: 50%; }
+        .cover-badge { display: inline-block; padding: 8px 20px; border: 1px solid rgba(234,179,8,0.5); border-radius: 50px; color: #facc15; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; position: relative; z-index: 1; background: rgba(234,179,8,0.1); }
+        .cover h1 { font-size: 48px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; position: relative; z-index: 1; letter-spacing: -1px; }
+        .cover h1 span { color: #60a5fa; }
+        .cover p { font-size: 18px; color: #94a3b8; max-width: 500px; margin-bottom: 20px; position: relative; z-index: 1; }
+        .cover-footer { position: relative; z-index: 1; color: #475569; font-size: 13px; }
+        .cover-footer strong { color: #94a3b8; }
+        .chapter-header { padding: 80px 0 40px; border-bottom: 1px solid #2a2a2a; margin-bottom: 40px; }
+        .chapter-number { font-size: 13px; font-weight: 700; color: #3b82f6; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; }
+        .chapter-header h2 { font-size: 36px; font-weight: 800; letter-spacing: -0.5px; }
+        .chapter-header p { color: #888; margin-top: 10px; font-size: 16px; }
+        h3 { font-size: 22px; font-weight: 700; margin: 40px 0 16px; letter-spacing: -0.3px; }
+        p { margin-bottom: 16px; color: #bbb; }
+        strong { color: #e5e5e5; }
+        ul, ol { margin: 0 0 20px 24px; color: #bbb; }
+        li { margin-bottom: 8px; }
+        pre { background: #141414; border: 1px solid #2a2a2a; border-radius: 12px; padding: 24px; margin: 20px 0 28px; overflow-x: auto; font-family: 'JetBrains Mono', monospace; font-size: 13.5px; line-height: 1.8; }
+        code { font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+        p code, li code { background: #1a1a1a; padding: 2px 8px; border-radius: 5px; border: 1px solid #2a2a2a; font-size: 13px; }
+        .code-label { display: inline-block; background: #3b82f6; color: white; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 6px 6px 0 0; margin-bottom: -1px; position: relative; top: 1px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .output-label { display: inline-block; background: #1c2633; color: #7d8590; font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 6px 6px 0 0; margin-bottom: -1px; position: relative; top: 1px; text-transform: uppercase; letter-spacing: 1px; }
+        .output-block { background: #0d1117; border: 1px solid #1c2633; border-radius: 10px; padding: 20px 24px; margin: 16px 0 28px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #22c55e; line-height: 1.7; }
+        .tip-box { border-left: 4px solid #22c55e; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; background: rgba(34,197,94,0.08); }
+        .tip-box::before { content: '💡 Tip: '; font-weight: 700; color: #22c55e; }
+        .warning-box { border-left: 4px solid #eab308; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; background: rgba(234,179,8,0.08); }
+        .warning-box::before { content: '⚠️ Note: '; font-weight: 700; color: #eab308; }
+        .info-box { border-left: 4px solid #3b82f6; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; background: rgba(59,130,246,0.08); }
+        .info-box::before { content: 'ℹ️ Info: '; font-weight: 700; color: #3b82f6; }
+        .locked-chapter { padding: 50px 30px; text-align: center; border: 2px dashed #2a2a2a; border-radius: 16px; margin: 30px 0; }
+        .locked-chapter h4 { font-size: 20px; margin-bottom: 8px; color: #555; }
+        .locked-chapter p { color: #444; font-size: 14px; }
+        .locked-chapter .lock-icon { font-size: 40px; margin-bottom: 15px; }
+        .cta-page { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px 40px; background: linear-gradient(135deg, #0f172a 0%, #030712 100%); }
+        .cta-page h2 { font-size: 36px; font-weight: 800; margin-bottom: 16px; }
+        .cta-page p { color: #94a3b8; font-size: 18px; max-width: 480px; margin-bottom: 30px; }
+        .cta-btn { display: inline-block; padding: 16px 40px; background: white; color: black; font-weight: 700; border-radius: 10px; text-decoration: none; font-size: 16px; }
+        .cta-btn:hover { background: #e5e5e5; }
+        .section-divider { border: none; border-top: 1px solid #2a2a2a; margin: 60px 0; }
+    </style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+    <div class="cover-badge">⭐ Free Sample — 2 Chapters</div>
+    <h1>Python Automation<br/>& Tech <span>Starter Kit</span></h1>
+    <p>Preview 2 full chapters from the complete kit. See the quality before you buy.</p>
+    <p style="font-size:14px; color:#64748b; margin-top:20px;">Full version includes <strong style="color:#94a3b8;">10 chapters</strong>, <strong style="color:#94a3b8;">10 scripts</strong>, and <strong style="color:#94a3b8;">50+ pages</strong>.</p>
+    <div class="cover-footer" style="margin-top:40px;">
+        By <strong>Ali Raza Saleem</strong> &nbsp;•&nbsp; TechKit
+    </div>
+</div>
+
+<!-- CHAPTER 01 — FULL (FREE) -->
+<div class="container">
+    <div class="page-break">
+        <div class="chapter-header">
+            <div class="chapter-number">Chapter 01 — Free Preview</div>
+            <h2>Getting Started with Python</h2>
+            <p>Install Python, set up your environment, and run your first script.</p>
+        </div>
+
+        <h3>Step 1: Install Python</h3>
+        <p>Download the latest version of Python from the official website. Make sure to check the box that says <strong>"Add Python to PATH"</strong> during installation.</p>
+        <ol>
+            <li>Go to <strong>python.org/downloads</strong></li>
+            <li>Download Python 3.12+ for your OS (Windows/Mac/Linux)</li>
+            <li>Run the installer — <strong>check "Add Python to PATH"</strong></li>
+            <li>Click Install Now</li>
+        </ol>
+
+        <h3>Step 2: Verify Installation</h3>
+        <p>Open your terminal (Command Prompt on Windows, Terminal on Mac/Linux) and run:</p>
+        <span class="code-label">Terminal</span>
+        <pre>python --version</pre>
+        <span class="output-label">Output</span>
+        <div class="output-block">Python 3.12.4</div>
+
+        <div class="tip-box">If you see a version number, you're all set! If not, restart your computer and try again.</div>
+
+        <h3>Step 3: Install a Code Editor</h3>
+        <p>We recommend <strong>Visual Studio Code (VS Code)</strong> — it's free, lightweight, and perfect for Python.</p>
+        <ol>
+            <li>Download from <strong>code.visualstudio.com</strong></li>
+            <li>Install the <strong>Python extension</strong> from the Extensions tab</li>
+            <li>Create a new file called <code>hello.py</code></li>
+        </ol>
+
+        <h3>Your First Script</h3>
+        <span class="code-label">hello.py</span>
+        <pre>print("Hello, World! 🚀")
+print("Welcome to the Python Automation Starter Kit!")
+print("Let's build something amazing together.")</pre>
+
+        <p>Run it from the terminal:</p>
+        <span class="code-label">Terminal</span>
+        <pre>python hello.py</pre>
+        <span class="output-label">Output</span>
+        <div class="output-block">Hello, World! 🚀
+Welcome to the Python Automation Starter Kit!
+Let's build something amazing together.</div>
+
+        <div class="info-box">You just ran your first Python script! Every chapter from here will build on this foundation.</div>
+    </div>
+
+    <!-- CHAPTER 02 — FULL (FREE) -->
+    <div class="page-break">
+        <div class="chapter-header">
+            <div class="chapter-number">Chapter 02 — Free Preview</div>
+            <h2>Auto-Organize Your Files</h2>
+            <p>Automatically sort messy downloads folders by file type.</p>
+        </div>
+
+        <p>Tired of a cluttered Downloads folder? This script automatically moves files into folders based on their type — images go to <code>Images/</code>, PDFs go to <code>Documents/</code>, and so on.</p>
+
+        <h3>How It Works</h3>
+        <ul>
+            <li>Scans every file in the target folder</li>
+            <li>Identifies the file extension (.jpg, .pdf, .mp4, etc.)</li>
+            <li>Creates category folders if they don't exist</li>
+            <li>Moves each file to the correct folder automatically</li>
+        </ul>
+
+        <h3>The Script</h3>
+        <span class="code-label">file_organizer.py</span>
+        <pre>import os
+import shutil
+
+# Change this to your target folder
+TARGET_DIR = os.path.expanduser("~/Downloads")
+
+# Define file categories and their extensions
+CATEGORIES = {
+    "Images":    [".jpg", ".jpeg", ".png", ".gif", ".svg", ".webp"],
+    "Documents": [".pdf", ".doc", ".docx", ".txt", ".xlsx", ".pptx"],
+    "Videos":    [".mp4", ".mkv", ".avi", ".mov"],
+    "Audio":     [".mp3", ".wav", ".flac", ".aac"],
+    "Archives":  [".zip", ".rar", ".7z", ".tar", ".gz"],
+    "Code":      [".py", ".js", ".html", ".css", ".json"],
+}
+
+def organize_files():
+    moved_count = 0
+
+    for filename in os.listdir(TARGET_DIR):
+        filepath = os.path.join(TARGET_DIR, filename)
+
+        # Skip directories
+        if os.path.isdir(filepath):
+            continue
+
+        # Get file extension
+        _, ext = os.path.splitext(filename)
+        ext = ext.lower()
+
+        # Find the right category
+        destination_folder = "Others"
+        for category, extensions in CATEGORIES.items():
+            if ext in extensions:
+                destination_folder = category
+                break
+
+        # Create folder if needed & move file
+        dest_path = os.path.join(TARGET_DIR, destination_folder)
+        os.makedirs(dest_path, exist_ok=True)
+        shutil.move(filepath, os.path.join(dest_path, filename))
+        moved_count += 1
+        print(f"  ✅ {filename} → {destination_folder}/")
+
+    print(f"\n🎉 Done! Organized {moved_count} files.")
+
+if __name__ == "__main__":
+    print("📂 Organizing your files...\n")
+    organize_files()</pre>
+
+        <span class="output-label">Sample Output</span>
+        <div class="output-block">📂 Organizing your files...
+
+  ✅ photo_2024.jpg → Images/
+  ✅ assignment.pdf → Documents/
+  ✅ lecture.mp4 → Videos/
+  ✅ song.mp3 → Audio/
+  ✅ project.zip → Archives/
+
+🎉 Done! Organized 5 files.</div>
+
+        <div class="tip-box">You can customize the <code>CATEGORIES</code> dictionary to add your own file types and folder names!</div>
+    </div>
+
+    <!-- LOCKED CHAPTERS PREVIEW -->
+    <div class="page-break">
+        <div class="chapter-header">
+            <div class="chapter-number">Remaining Chapters</div>
+            <h2>8 More Scripts in the Full Kit</h2>
+            <p>Here's what you're missing in the free sample.</p>
+        </div>
+
+        <div class="locked-chapter">
+            <div class="lock-icon">🔒</div>
+            <h4>Chapter 03 — Bulk Rename Files Like a Pro</h4>
+            <p>Rename 100s of files in seconds with custom patterns.</p>
+        </div>
+        <div class="locked-chapter">
+            <div class="lock-icon">🔒</div>
+            <h4>Chapter 04 — Web Scraping with Python</h4>
+            <p>Extract data, headlines, and prices from any website automatically.</p>
+        </div>
+        <div class="locked-chapter">
+            <div class="lock-icon">🔒</div>
+            <h4>Chapter 05 — Automate WhatsApp Messages</h4>
+            <p>Schedule and send WhatsApp messages to anyone.</p>
+        </div>
+        <div class="locked-chapter">
+            <div class="lock-icon">🔒</div>
+            <h4>Chapter 06 — Email Automation</h4>
+            <p>Send professional emails programmatically with Python.</p>
+        </div>
+        <div class="locked-chapter">
+            <div class="lock-icon">🔒</div>
+            <h4>Chapter 07 — PDF Merger & Splitter Tool</h4>
+            <p>Combine or split PDFs with a single script.</p>
+        </div>
+        <div class="locked-chapter">
+            <div class="lock-icon">🔒</div>
+            <h4>Chapter 08 — Password Generator</h4>
+            <p>Generate strong, random passwords instantly.</p>
+        </div>
+        <div class="locked-chapter">
+            <div class="lock-icon">🔒</div>
+            <h4>Chapter 09 — System Health Monitor</h4>
+            <p>Check CPU, RAM, disk usage, and battery in real-time.</p>
+        </div>
+        <div class="locked-chapter">
+            <div class="lock-icon">🔒</div>
+            <h4>Chapter 10 — Next Steps & Resources</h4>
+            <p>Curated learning path and free resources to level up.</p>
+        </div>
+    </div>
+</div>
+
+<!-- CTA PAGE -->
+<div class="cta-page page-break">
+    <p style="font-size:48px; margin-bottom:20px;">🚀</p>
+    <h2>Enjoyed the sample?</h2>
+    <p>Get the full kit with all 10 chapters, 10 scripts, and 50+ pages for just <strong style="color:white;">PKR 500</strong>.</p>
+    <a href="https://wa.me/923467282874?text=Hi%20Ali!%20I%20read%20the%20free%20sample%20and%20want%20to%20buy%20the%20full%20Python%20Automation%20Kit!" class="cta-btn">Get Full Kit — PKR 500</a>
+    <p style="font-size:13px; color:#475569; margin-top:20px;">EasyPaisa: <strong style="color:#94a3b8;">03467282874</strong> (Ali Raza Saleem)</p>
+</div>
+
+</body>
+</html>
