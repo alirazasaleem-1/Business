@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARS Dev Club | Learn Applied AI & Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Satoshi', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #030712; color: #f9fafb; overflow-x: hidden; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen selection:bg-blue-500/30">
+
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full md:w-[800px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none -z-10"></div>
+
+    <!-- Hero Section -->
+    <main class="w-full max-w-5xl mx-auto px-6 pt-20 pb-24 text-center">
+        
+        <div class="inline-block px-4 py-1.5 bg-blue-500/10 text-blue-400 text-sm font-bold rounded-full mb-8 border border-blue-500/20">
+            🚀 The Ultimate Community for Tech Students
+        </div>
+        
+        <h1 class="text-4xl md:text-6xl font-black tracking-tighter mb-6 leading-tight">
+            University teaches you theory.<br>
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">We teach you how to build real things.</span>
+        </h1>
+        
+        <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Stop worrying about final year projects and start building Applied AI, Web Scrapers, and WhatsApp Bots that clients actually pay for.
+        </p>
+
+        <a href="https://wa.me/923467282874?text=Hi%20Ali!%20I%20want%20to%20join%20the%20ARS%20Dev%20Club%20for%20500/month." target="_blank" class="inline-block px-10 py-4 bg-white text-black font-black text-lg rounded-xl hover:bg-gray-200 transition-colors shadow-[0_0_40px_rgba(255,255,255,0.2)]">
+            Join the Club for 500 PKR / month
+        </a>
+        <p class="mt-4 text-sm text-gray-500 font-medium">Only 20 spots available. (19 left)</p>
+        
+        <!-- Value Proposition Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-24 text-left">
+            
+            <div class="glass-card rounded-2xl p-8">
+                <div class="text-4xl mb-4">🛠️</div>
+                <h3 class="text-xl font-bold mb-3">2 Real Projects a Month</h3>
+                <p class="text-gray-400 text-sm">Every 15 days, you get source code + a video breakdown of a real-world tool (like an AI email responder or data scraper). Build your portfolio instantly.</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-8">
+                <div class="text-4xl mb-4">🆘</div>
+                <h3 class="text-xl font-bold mb-3">The "Error Hotline"</h3>
+                <p class="text-gray-400 text-sm">Stuck on a red error screen? Don't quit. Send a screenshot to the private WhatsApp group and get a direct voice-note fix from a senior developer.</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-8">
+                <div class="text-4xl mb-4">💵</div>
+                <h3 class="text-xl font-bold mb-3">Freelance Guidance</h3>
+                <p class="text-gray-400 text-sm">Learn how to package these exact projects and sell them on Upwork and Fiverr to international clients for dollars.</p>
+            </div>
+            
+        </div>
+        
+    </main>
+
+    <footer class="border-t border-white/10 py-8 text-center text-gray-500 text-sm">
+        &copy; 2026 ARS Digital &bull; Faisalabad
+    </footer>
+</body>
+</html>
