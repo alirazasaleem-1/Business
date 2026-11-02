@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheet #1: OOP Exam & Viva Survival Guide | Ali Raza Saleem</title>
+    <meta name="description" content="Object-Oriented Programming (C++/Python) revision guide for BSCS/BSSE students. Covers the 4 pillars, memory leaks, deep copy, virtual destructors, and top 10 viva questions.">
+    
+    <meta property="og:title" content="OOP Exam & Viva Survival Guide — By Ali Raza Saleem">
+    <meta property="og:description" content="Stop reading 100 textbook slides. Here is everything you need for OOP Midterms, Finals, and Lab Vivas.">
+    <meta property="og:type" content="article">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Satoshi', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #030712; color: #f9fafb; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        @media print {
+            body { background: white !important; color: black !important; }
+            .no-print { display: none !important; }
+            .glass-card { background: none !important; border: 1px solid #ccc !important; color: black !important; }
+            .text-gray-400, .text-gray-300 { color: #333 !important; }
+            .text-white { color: black !important; }
+            pre { background: #f4f4f5 !important; color: #111 !important; border: 1px solid #ddd !important; }
+            table { width: 100% !important; border-collapse: collapse !important; color: black !important; }
+            th, td { border: 1px solid #ddd !important; padding: 6px !important; color: black !important; }
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen selection:bg-blue-500/30">
+
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full md:w-[800px] h-[400px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none -z-10 no-print"></div>
+
+    <!-- Navigation -->
+    <header class="w-full max-w-4xl mx-auto px-6 py-6 flex justify-between items-center border-b border-white/10 no-print">
+        <a href="./toolkit.html" class="flex items-center gap-2 text-sm font-bold text-gray-300 hover:text-white transition-colors">
+            <span>&larr;</span>
+            <span>Back to Student Toolkit</span>
+        </a>
+        <div class="flex items-center gap-2">
+            <button onclick="window.print()" class="px-4 py-2 bg-white text-black font-bold text-xs rounded-xl hover:bg-gray-200 transition-colors shadow-sm">
+                🖨️ Print / Save PDF
+            </button>
+            <a href="https://wa.me/923467282874?text=Salam%20Ali!%20I%20have%20feedback%20on%20the%20OOP%20Survival%20Guide." target="_blank" class="px-3.5 py-2 bg-white/10 hover:bg-white/20 text-white rounded-xl text-xs font-semibold border border-white/10 transition-colors">
+                💬 Feedback
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="w-full max-w-4xl mx-auto px-6 py-10 space-y-10">
+
+        <!-- Title Header -->
+        <div class="border-b border-white/10 pb-8 text-left">
+            <div class="inline-block px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-bold rounded-full mb-3 border border-blue-500/20">
+                Sheet #1 &bull; 100% Free BSCS Resource
+            </div>
+            <h1 class="text-3xl md:text-5xl font-black text-white tracking-tight mb-4">
+                OOP Exam & Viva Survival Guide
+            </h1>
+            <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                By <strong>Ali Raza Saleem</strong> (BSCS / AI Engineering) &bull; Designed for fast exam revision, core memory understanding, and lab viva preparation.
+            </p>
+        </div>
+
+        <!-- 4 Pillars -->
+        <section class="glass-card rounded-2xl p-6 md:p-8 space-y-6">
+            <h2 class="text-2xl font-black text-white flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-blue-600/30 text-blue-400 flex items-center justify-center text-sm">1</span>
+                The 4 Pillars in Plain English
+            </h2>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs md:text-sm border border-white/10 rounded-xl overflow-hidden">
+                    <thead class="bg-white/5 text-gray-300 font-bold border-b border-white/10">
+                        <tr>
+                            <th class="p-3">Pillar</th>
+                            <th class="p-3">Intuitive Concept</th>
+                            <th class="p-3">Viva One-Liner</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/10 text-gray-300">
+                        <tr>
+                            <td class="p-3 font-bold text-white">Encapsulation</td>
+                            <td class="p-3">Keep variables <code>private</code>; only modify via getters/setters. Protects data from outside damage.</td>
+                            <td class="p-3 text-blue-300 italic">"Binding data with methods and restricting direct access."</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-white">Abstraction</td>
+                            <td class="p-3">Like a TV remote: push buttons to use it without worrying about circuit voltage inside.</td>
+                            <td class="p-3 text-blue-300 italic">"Hiding internal implementation details using abstract classes/interfaces."</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-white">Inheritance</td>
+                            <td class="p-3">Write common logic in a parent class; derived child classes reuse it (<code>Car</code> inherits <code>Vehicle</code>).</td>
+                            <td class="p-3 text-blue-300 italic">"Deriving a child class from a parent class for code reuse."</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-white">Polymorphism</td>
+                            <td class="p-3">Same function name <code>draw()</code>, but Circle draws a circle and Square draws a square.</td>
+                            <td class="p-3 text-blue-300 italic">"Same function executes different behavior based on object context."</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Compile vs Runtime -->
+        <section class="glass-card rounded-2xl p-6 md:p-8 space-y-6">
+            <h2 class="text-2xl font-black text-white flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-blue-600/30 text-blue-400 flex items-center justify-center text-sm">2</span>
+                Compile-Time vs Runtime Polymorphism
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm">
+                <div class="p-4 rounded-xl bg-black/40 border border-white/10">
+                    <h3 class="font-bold text-white mb-2">Compile-Time (Early Binding)</h3>
+                    <p class="text-gray-400 mb-2">Function Overloading & Operator Overloading.</p>
+                    <p class="text-gray-400">The compiler decides exact function address before runtime. Faster, but rigid.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-black/40 border border-white/10">
+                    <h3 class="font-bold text-white mb-2">Runtime (Late Binding)</h3>
+                    <p class="text-gray-400 mb-2">Function Overriding using <code>virtual</code> keyword.</p>
+                    <p class="text-gray-400">Resolved dynamically at execution using a Virtual Table (VTable).</p>
+                </div>
+            </div>
+
+            <div class="relative bg-[#0d1117] p-4 rounded-xl border border-gray-800 text-xs md:text-sm font-mono text-gray-300 overflow-x-auto">
+                <button onclick="copyCode(this)" class="no-print absolute top-3 right-3 px-2.5 py-1 bg-white/10 hover:bg-white/20 text-white rounded text-[11px] font-sans transition-colors">
+                    Copy Code
+                </button>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Base {
+public:
+    virtual void show() { cout &lt;&lt; "Base Show\n"; }
+    virtual ~Base() {} // Always make base destructors virtual!
+};
+
+class Derived : public Base {
+public:
+    void show() override { cout &lt;&lt; "Derived Show\n"; }
+};
+
+int main() {
+    Base* ptr = new Derived();
+    ptr-&gt;show(); // Output: "Derived Show" (Runtime resolution)
+    delete ptr;
+    return 0;
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- Shallow Copy vs Deep Copy -->
+        <section class="glass-card rounded-2xl p-6 md:p-8 space-y-6">
+            <h2 class="text-2xl font-black text-white flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-blue-600/30 text-blue-400 flex items-center justify-center text-sm">3</span>
+                Shallow Copy vs Deep Copy (Exam & Viva Trap)
+            </h2>
+
+            <p class="text-gray-300 text-xs md:text-sm">
+                Default copy constructors perform a <strong>shallow copy</strong>: pointer addresses are duplicated directly, meaning two objects reference the exact same heap memory block.
+            </p>
+
+            <div class="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-300 text-xs">
+                ⚠️ <strong>The Double Free Trap:</strong> When both objects go out of scope, both call <code>delete</code> on the identical heap address, crashing the program.
+            </div>
+
+            <div class="relative bg-[#0d1117] p-4 rounded-xl border border-gray-800 text-xs md:text-sm font-mono text-gray-300 overflow-x-auto">
+                <button onclick="copyCode(this)" class="no-print absolute top-3 right-3 px-2.5 py-1 bg-white/10 hover:bg-white/20 text-white rounded text-[11px] font-sans transition-colors">
+                    Copy Code
+                </button>
+<pre><code>// CORRECT DEEP COPY IMPLEMENTATION:
+class Student {
+    int* id;
+public:
+    Student(int val) { id = new int(val); }
+
+    // Deep copy constructor: Allocates fresh heap memory
+    Student(const Student&amp; other) {
+        id = new int(*other.id); 
+    }
+
+    ~Student() { delete id; }
+};</code></pre>
+            </div>
+        </section>
+
+        <!-- Top 10 Viva Qs -->
+        <section class="glass-card rounded-2xl p-6 md:p-8 space-y-6">
+            <h2 class="text-2xl font-black text-white flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-blue-600/30 text-blue-400 flex items-center justify-center text-sm">4</span>
+                Top 10 Lab Viva Questions & Fast Answers
+            </h2>
+
+            <div class="space-y-3 text-xs md:text-sm">
+                <div class="p-3 bg-white/5 rounded-xl border border-white/10">
+                    <strong class="text-white">1. Can constructors be virtual?</strong>
+                    <p class="text-gray-400 mt-1">No. Virtual dispatch requires a VTable pointer (vptr), which doesn't exist until the constructor creates the object.</p>
+                </div>
+                <div class="p-3 bg-white/5 rounded-xl border border-white/10">
+                    <strong class="text-white">2. Can destructors be virtual?</strong>
+                    <p class="text-gray-400 mt-1">Yes, and base class destructors must be virtual to avoid memory leaks when deleting derived objects via base pointers.</p>
+                </div>
+                <div class="p-3 bg-white/5 rounded-xl border border-white/10">
+                    <strong class="text-white">3. What is a pure virtual function?</strong>
+                    <p class="text-gray-400 mt-1">A function declared with <code>= 0;</code> with no body in the base class. It makes the class abstract.</p>
+                </div>
+                <div class="p-3 bg-white/5 rounded-xl border border-white/10">
+                    <strong class="text-white">4. Can you instantiate an abstract class?</strong>
+                    <p class="text-gray-400 mt-1">No. You can only create pointers and references to it, not standalone objects.</p>
+                </div>
+                <div class="p-3 bg-white/5 rounded-xl border border-white/10">
+                    <strong class="text-white">5. What is the diamond problem?</strong>
+                    <p class="text-gray-400 mt-1">Multiple inheritance duplicate ambiguity when two parent classes inherit from the same grandparent. Resolved with <code>virtual</code> inheritance.</p>
+                </div>
+                <div class="p-3 bg-white/5 rounded-xl border border-white/10">
+                    <strong class="text-white">6. Does `friend` function violate encapsulation?</strong>
+                    <p class="text-gray-400 mt-1">Yes, technically, because it bypasses class privacy to access private/protected members.</p>
+                </div>
+                <div class="p-3 bg-white/5 rounded-xl border border-white/10">
+                    <strong class="text-white">7. What is the `this` pointer?</strong>
+                    <p class="text-gray-400 mt-1">An implicit constant pointer holding the memory address of the current calling object.</p>
+                </div>
+                <div class="p-3 bg-white/5 rounded-xl border border-white/10">
+                    <strong class="text-white">8. Difference between Struct and Class in C++?</strong>
+                    <p class="text-gray-400 mt-1">Only default access: <code>struct</code> is public by default; <code>class</code> is private by default.</p>
+                </div>
+                <div class="p-3 bg-white/5 rounded-xl border border-white/10">
+                    <strong class="text-white">9. What is object slicing?</strong>
+                    <p class="text-gray-400 mt-1">When a derived object is assigned by value to a base object, derived-specific members are sliced away.</p>
+                </div>
+                <div class="p-3 bg-white/5 rounded-xl border border-white/10">
+                    <strong class="text-white">10. Can you overload based on return type alone?</strong>
+                    <p class="text-gray-400 mt-1">No. The compiler requires different parameter types, numbers, or ordering.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Box -->
+        <div class="glass-card rounded-2xl p-6 text-center space-y-4 no-print border-blue-500/30">
+            <h3 class="text-xl font-bold text-white">Have feedback or need another topic?</h3>
+            <p class="text-xs text-gray-400 max-w-md mx-auto">
+                Help me make this toolkit better for all Pakistani CS students. Drop your topic request directly:
+            </p>
+            <div class="flex justify-center gap-3">
+                <a href="https://wa.me/923467282874?text=Salam%20Ali!%20I%20read%20Sheet%201%20and%20want%20to%20request%20a%20sheet%20on:" target="_blank" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl transition-colors">
+                    💬 Message Ali on WhatsApp
+                </a>
+                <a href="./toolkit.html" class="px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white font-bold text-xs rounded-xl transition-colors border border-white/10">
+                    Explore All Resources
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="border-t border-white/10 py-8 text-center text-gray-500 text-xs no-print">
+        &copy; 2026 Ali Raza Saleem &bull; Student Toolkit &bull; Faisalabad
+    </footer>
+
+    <script>
+        function copyCode(btn) {
+            const pre = btn.parentElement.querySelector('pre');
+            if (!pre) return;
+            navigator.clipboard.writeText(pre.innerText).then(() => {
+                const prev = btn.innerText;
+                btn.innerText = '✅ Copied!';
+                setTimeout(() => btn.innerText = prev, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Raza Saleem — Student Toolkit | Free BSCS Resources</title>
+    <meta name="description" content="Study smarter. Build better. A free collection of practical BSCS resources, revision sheets, and exam guides created by Ali Raza Saleem.">
+    
+    <!-- Open Graph for WhatsApp / Social previews -->
+    <meta property="og:title" content="Ali Raza Saleem — Student Toolkit">
+    <meta property="og:description" content="Free BSCS Revision Sheets & Viva Guides. 100% Free at launch, built by a student for students.">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Satoshi', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #030712; color: #f9fafb; overflow-x: hidden; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-active {
+            background: rgba(59, 130, 246, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        
+        /* Print Stylesheet for clean 1-click PDF export */
+        @media print {
+            body { background: white !important; color: black !important; }
+            .no-print, header, footer, .blur-bg, #feedback, #vote-section, .action-bar { display: none !important; }
+            .glass-card, .glass-card-active { 
+                background: none !important; 
+                border: 1px solid #ccc !important; 
+                color: black !important;
+                box-shadow: none !important;
+                page-break-inside: avoid;
+            }
+            .text-gray-400, .text-gray-300 { color: #333 !important; }
+            .text-white { color: black !important; }
+            pre { background: #f4f4f5 !important; color: #111 !important; border: 1px solid #ddd !important; }
+            code { color: #111 !important; }
+            table { width: 100% !important; border-collapse: collapse !important; color: black !important; }
+            th, td { border: 1px solid #ddd !important; padding: 6px 10px !important; color: black !important; }
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen selection:bg-blue-500/30">
+
+    <!-- Ambient background glow -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full md:w-[900px] h-[500px] bg-blue-600/10 blur-[160px] rounded-full pointer-events-none -z-10 blur-bg"></div>
+
+    <!-- Header Navigation -->
+    <header class="w-full max-w-6xl mx-auto px-6 py-6 flex justify-between items-center border-b border-white/10 no-print">
+        <div class="flex items-center gap-3">
+            <span class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-black text-white text-base shadow-lg shadow-blue-500/20">AR</span>
+            <div>
+                <a href="./toolkit.html" class="font-bold text-lg tracking-tight hover:text-blue-400 transition-colors">Ali Raza Saleem</a>
+                <span class="hidden sm:inline-block text-xs px-2 py-0.5 ml-2 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full font-semibold">Student Toolkit</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-4 text-sm font-semibold">
+            <a href="#library" class="text-gray-300 hover:text-white transition-colors hidden md:inline">Library</a>
+            <a href="#oop-sheet" class="text-gray-300 hover:text-white transition-colors">OOP Guide</a>
+            <a href="#feedback" class="text-gray-300 hover:text-white transition-colors hidden sm:inline">Request Topic</a>
+            <a href="https://wa.me/923467282874?text=Salam%20Ali!%20I%20am%20using%20the%20Student%20Toolkit." target="_blank" class="px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-colors border border-white/10 flex items-center gap-1.5">
+                <span>💬 WhatsApp Ali</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="w-full max-w-4xl mx-auto px-6 pt-16 pb-12 text-center no-print">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-500/10 text-blue-400 text-xs md:text-sm font-bold rounded-full mb-6 border border-blue-500/20">
+            <span>✨ 100% Free at Launch</span>
+            <span>&bull;</span>
+            <span>Student-First</span>
+            <span>&bull;</span>
+            <span>Built by Ali</span>
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6 leading-tight">
+            Study Smarter. <br>
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400">Build Better.</span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+            A free collection of practical BSCS revision sheets, exam cheat codes, and mental models created by an AI Engineering student in Pakistan — for students who want real clarity without the textbook fluff.
+        </p>
+
+        <div class="flex flex-wrap justify-center items-center gap-3">
+            <a href="#oop-sheet" class="px-7 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all shadow-[0_0_25px_rgba(37,99,235,0.35)] flex items-center gap-2">
+                <span>📖 Open Sheet #1: OOP Survival Guide</span>
+                <span>&rarr;</span>
+            </a>
+            <a href="#library" class="px-6 py-3.5 bg-white/5 hover:bg-white/10 text-gray-200 border border-white/15 font-bold rounded-xl transition-colors">
+                Browse Resource Library
+            </a>
+        </div>
+
+        <!-- Metric / Trust bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto mt-14 pt-8 border-t border-white/10 text-left">
+            <div>
+                <p class="text-2xl font-black text-white">0 PKR</p>
+                <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">100% Free</p>
+            </div>
+            <div>
+                <p class="text-2xl font-black text-blue-400">Exam-Focused</p>
+                <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Midterms & Vivas</p>
+            </div>
+            <div>
+                <p class="text-2xl font-black text-indigo-400">Direct Code</p>
+                <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">C++ & Python</p>
+            </div>
+            <div>
+                <p class="text-2xl font-black text-purple-400">Built by Ali</p>
+                <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">BSCS / AI Student</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: RESOURCE LIBRARY -->
+    <section id="library" class="w-full max-w-5xl mx-auto px-6 py-12 no-print">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+            <div>
+                <div class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-1">Pillar 1</div>
+                <h2 class="text-2xl md:text-3xl font-black tracking-tight">Free Student Resource Library</h2>
+                <p class="text-sm text-gray-400">Targeting the 5 toughest BSCS subjects, semester study planner, and practice packs.</p>
+            </div>
+            <a href="#vote-section" class="text-xs font-bold text-blue-400 hover:text-blue-300 underline underline-offset-4">
+                Vote on next topic &rarr;
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Sheet 1 (Live) -->
+            <div class="glass-card-active rounded-2xl p-6 relative flex flex-col justify-between hover:border-blue-400 transition-all">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="px-2.5 py-1 bg-green-500/20 text-green-300 border border-green-500/30 text-xs font-bold rounded-full">🟢 AVAILABLE NOW</span>
+                        <span class="text-xs text-gray-400 font-mono">Sheet #1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">OOP Exam & Viva Survival Guide</h3>
+                    <p class="text-xs text-gray-300 mb-4 line-clamp-3">
+                        The 4 pillars in plain English, runtime vs compile-time polymorphism, shallow vs deep copy, virtual destructors, and top 10 viva questions.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="text-[10px] px-2 py-0.5 bg-white/5 text-gray-300 rounded border border-white/10">C++</span>
+                        <span class="text-[10px] px-2 py-0.5 bg-white/5 text-gray-300 rounded border border-white/10">Viva Traps</span>
+                        <span class="text-[10px] px-2 py-0.5 bg-white/5 text-gray-300 rounded border border-white/10">2nd/3rd Sem</span>
+                    </div>
+                </div>
+                <a href="#oop-sheet" class="w-full text-center py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl transition-colors">
+                    Read Sheet Online &rarr;
+                </a>
+            </div>
+
+            <!-- Sheet 2 (In Development) -->
+            <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between opacity-85">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="px-2.5 py-1 bg-amber-500/10 text-amber-300 border border-amber-500/20 text-xs font-bold rounded-full">🟡 COMING NEXT</span>
+                        <span class="text-xs text-gray-400 font-mono">Sheet #2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">DSA: Pointers & Linked Lists</h3>
+                    <p class="text-xs text-gray-400 mb-4">
+                        Pointer arithmetic visualizer, Singly vs Doubly linked list edge cases, Stack/Queue implementations, and Big-O memory cheat sheet.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="text-[10px] px-2 py-0.5 bg-white/5 text-gray-400 rounded">Pointers</span>
+                        <span class="text-[10px] px-2 py-0.5 bg-white/5 text-gray-400 rounded">Big-O</span>
+                        <span class="text-[10px] px-2 py-0.5 bg-white/5 text-gray-400 rounded">Trees</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/923467282874?text=Salam%20Ali!%20Please%20prioritize%20Sheet%202%20(DSA%20Linked%20Lists)." target="_blank" class="w-full text-center py-2.5 bg-white/5 hover:bg-white/10 text-gray-300 font-bold text-xs rounded-xl transition-colors border border-white/10">
+                    Vote to Expedite 🚀
+                </a>
+            </div>
+
+            <!-- Sheet 3 (Planned) -->
+            <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between opacity-85">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="px-2.5 py-1 bg-purple-500/10 text-purple-300 border border-purple-500/20 text-xs font-bold rounded-full">🔵 PLANNED</span>
+                        <span class="text-xs text-gray-400 font-mono">Sheet #3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Database & SQL Normalization</h3>
+                    <p class="text-xs text-gray-400 mb-4">
+                        Step-by-step 1NF to BCNF decomposition guide, complex SQL Joins visual mental model, and ACID properties exam questions.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="text-[10px] px-2 py-0.5 bg-white/5 text-gray-400 rounded">1NF to BCNF</span>
+                        <span class="text-[10px] px-2 py-0.5 bg-white/5 text-gray-400 rounded">SQL Joins</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/923467282874?text=Salam%20Ali!%20Please%20create%20the%20Database%20Normalization%20sheet." target="_blank" class="w-full text-center py-2.5 bg-white/5 hover:bg-white/10 text-gray-300 font-bold text-xs rounded-xl transition-colors border border-white/10">
+                    Request This Next 📩
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: LIVE SHEET #1 EMBEDDED READER -->
+    <section id="oop-sheet" class="w-full max-w-4xl mx-auto px-6 py-12 scroll-mt-6">
+        
+        <!-- Action Bar: Print / Share -->
+        <div class="action-bar flex flex-wrap justify-between items-center gap-4 bg-gray-900/80 border border-white/10 rounded-2xl p-4 mb-8 glass-card">
+            <div>
+                <div class="text-xs text-blue-400 font-bold uppercase tracking-wider">Revision Sheet #1</div>
+                <h2 class="text-xl md:text-2xl font-black text-white">OOP Exam & Viva Survival Guide</h2>
+            </div>
+            <div class="flex items-center gap-2">
+                <button onclick="window.print()" class="px-4 py-2 bg-white text-black font-bold text-xs rounded-xl hover:bg-gray-200 transition-colors flex items-center gap-1.5 shadow-sm">
+                    <span>🖨️ Print / Save as PDF</span>
+                </button>
+                <button onclick="copyCurrentUrl()" id="share-btn" class="px-4 py-2 bg-white/10 hover:bg-white/20 text-white font-bold text-xs rounded-xl transition-colors border border-white/10 flex items-center gap-1.5">
+                    <span>🔗 Share Link</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- The Content Box -->
+        <article class="glass-card rounded-3xl p-6 md:p-10 border-white/10 space-y-10 text-gray-200 leading-relaxed text-sm md:text-base">
+            
+            <!-- Metadata box -->
+            <div class="border-b border-white/10 pb-6 text-xs text-gray-400 flex flex-wrap justify-between gap-2">
+                <span><strong>Author:</strong> Ali Raza Saleem (BSCS / AI Engineering)</span>
+                <span><strong>Subject:</strong> CS201 / CS301 (Object Oriented Programming)</span>
+                <span><strong>Language:</strong> C++ / Python concepts</span>
+            </div>
+
+            <!-- Callout -->
+            <div class="p-4 rounded-xl bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs md:text-sm">
+                💡 <strong>Exam Note:</strong> This guide strips away university lecture slides clutter. It gives you the exact definitions, mental models, and code traps tested on midterm/final exam papers and in lab vivas.
+            </div>
+
+            <!-- Part 1: The 4 Pillars -->
+            <section class="space-y-4">
+                <h3 class="text-2xl font-black text-white tracking-tight flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-blue-600/30 text-blue-400 flex items-center justify-center text-sm">1</span>
+                    The 4 Pillars — In Plain English
+                </h3>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs md:text-sm border border-white/10 rounded-xl overflow-hidden">
+                        <thead class="bg-white/5 text-gray-300 font-bold border-b border-white/10">
+                            <tr>
+                                <th class="p-3">Pillar</th>
+                                <th class="p-3">What Textbooks Say</th>
+                                <th class="p-3">The Intuitive Mental Model</th>
+                                <th class="p-3">Viva One-Liner</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/10 text-gray-300">
+                            <tr>
+                                <td class="p-3 font-bold text-white">Encapsulation</td>
+                                <td class="p-3">Binding data and functions into a single unit.</td>
+                                <td class="p-3"><strong>Data Hiding & Security.</strong> Make variables <code>private</code>; allow access strictly through getters/setters so nobody corrupts internal state.</td>
+                                <td class="p-3 text-blue-300 italic">"Wrapping data with methods and restricting direct access to protect data integrity."</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-bold text-white">Abstraction</td>
+                                <td class="p-3">Hiding implementation and showing only essential features.</td>
+                                <td class="p-3"><strong>The TV Remote.</strong> You press the power button; you don't need to know circuit board voltages inside.</td>
+                                <td class="p-3 text-blue-300 italic">"Displaying only essential interfaces while hiding internal complexity using abstract classes."</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-bold text-white">Inheritance</td>
+                                <td class="p-3">Deriving a new class from an existing class.</td>
+                                <td class="p-3"><strong>Code Reusability.</strong> A <code>Student</code> is a <code>Person</code>. Write common code once in the parent class.</td>
+                                <td class="p-3 text-blue-300 italic">"Deriving child classes from parent classes to eliminate code duplication."</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-bold text-white">Polymorphism</td>
+                                <td class="p-3">Ability of a message to take multiple forms.</td>
+                                <td class="p-3"><strong>One Name, Many Actions.</strong> Call <code>speak()</code>: a Dog barks, a Cat meows. Same function name, different behavior.</td>
+                                <td class="p-3 text-blue-300 italic">"Same function call executes different code based on the actual object at runtime."</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Part 2: Compile-Time vs Runtime Polymorphism -->
+            <section class="space-y-4">
+                <h3 class="text-2xl font-black text-white tracking-tight flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-blue-600/30 text-blue-400 flex items-center justify-center text-sm">2</span>
+                    The #1 Exam Trap: Compile-Time vs Runtime
+                </h3>
+
+                <p class="text-gray-300 text-xs md:text-sm">
+                    Almost every CS professor tests whether you understand <strong>Early Binding (Compile-Time)</strong> vs <strong>Late Binding (Runtime)</strong>.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 rounded-xl bg-black/40 border border-white/10">
+                        <div class="font-bold text-white text-sm mb-2 flex items-center justify-between">
+                            <span>Compile-Time (Early Binding)</span>
+                            <span class="text-[10px] px-2 py-0.5 bg-blue-500/20 text-blue-300 rounded">Static</span>
+                        </div>
+                        <ul class="text-xs text-gray-400 space-y-1.5 list-disc list-inside">
+                            <li><strong>Examples:</strong> Function Overloading, Operator Overloading.</li>
+                            <li>Compiler decides which function to call at compile time.</li>
+                            <li>Zero runtime performance overhead (faster).</li>
+                        </ul>
+                    </div>
+                    <div class="p-4 rounded-xl bg-black/40 border border-white/10">
+                        <div class="font-bold text-white text-sm mb-2 flex items-center justify-between">
+                            <span>Runtime (Late Binding)</span>
+                            <span class="text-[10px] px-2 py-0.5 bg-purple-500/20 text-purple-300 rounded">Dynamic</span>
+                        </div>
+                        <ul class="text-xs text-gray-400 space-y-1.5 list-disc list-inside">
+                            <li><strong>Examples:</strong> Function Overriding with <code>virtual</code>.</li>
+                            <li>Decision made at runtime using a <strong>VTable (Virtual Table)</strong>.</li>
+                            <li>Requires a Base pointer pointing to a Derived object!</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Code snippet -->
+                <div class="relative bg-[#0d1117] p-4 rounded-xl border border-gray-800 text-xs md:text-sm font-mono text-gray-300 overflow-x-auto">
+                    <button onclick="copyCode(this)" class="no-print absolute top-3 right-3 px-2.5 py-1 bg-white/10 hover:bg-white/20 text-white rounded text-[11px] font-sans transition-colors">
+                        Copy Code
+                    </button>
+<pre><code>// RUNTIME POLYMORPHISM IN C++
+#include &lt;iostream&gt;
+using namespace std;
+
+class Animal {
+public:
+    // Without 'virtual', pointer type determines the call (Animal)
+    // With 'virtual', actual object type determines the call (Dog)
+    virtual void speak() {
+        cout &lt;&lt; "Generic sound" &lt;&lt; endl;
+    }
+    virtual ~Animal() {} // Mandatory virtual destructor!
+};
+
+class Dog : public Animal {
+public:
+    void speak() override {
+        cout &lt;&lt; "Woof! Woof!" &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Animal* a = new Dog(); // Base pointer -&gt; Derived object
+    a-&gt;speak();            // Outputs: "Woof! Woof!" because of virtual
+    delete a;
+    return 0;
+}</code></pre>
+                </div>
+            </section>
+
+            <!-- Part 3: Shallow vs Deep Copy & Virtual Destructor -->
+            <section class="space-y-4">
+                <h3 class="text-2xl font-black text-white tracking-tight flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-blue-600/30 text-blue-400 flex items-center justify-center text-sm">3</span>
+                    Memory & Constructors: Where Students Lose Marks
+                </h3>
+
+                <div class="space-y-3">
+                    <h4 class="font-bold text-white text-base">1. Shallow Copy vs Deep Copy (Viva Favorite 🔥)</h4>
+                    <p class="text-xs md:text-sm text-gray-300">
+                        The default C++ copy constructor does a <strong>Shallow Copy</strong>: it copies member variables byte-by-byte. If your class has a pointer <code>int* data</code>, both the original and copied object point to the <strong>exact same memory address on the Heap</strong>.
+                    </p>
+                    <div class="p-3 bg-red-500/10 border border-red-500/20 text-red-300 rounded-lg text-xs">
+                        ⚠️ <strong>The Crash:</strong> When object 1 destructs, it deletes the heap pointer. When object 2 destructs, it tries to delete already-freed memory &rarr; <code>Double Free Corruption Crash!</code>
+                    </div>
+                    <p class="text-xs md:text-sm text-gray-300">
+                        <strong>The Fix (Deep Copy):</strong> Allocate a <em>fresh new memory address</em> in the copy constructor and copy the data value into it:
+                    </p>
+                </div>
+
+                <div class="relative bg-[#0d1117] p-4 rounded-xl border border-gray-800 text-xs md:text-sm font-mono text-gray-300 overflow-x-auto">
+                    <button onclick="copyCode(this)" class="no-print absolute top-3 right-3 px-2.5 py-1 bg-white/10 hover:bg-white/20 text-white rounded text-[11px] font-sans transition-colors">
+                        Copy Code
+                    </button>
+<pre><code>class Student {
+    int* rollNo;
+public:
+    Student(int r) {
+        rollNo = new int(r); // Heap allocation
+    }
+
+    // CUSTOM DEEP COPY CONSTRUCTOR
+    Student(const Student&amp; other) {
+        rollNo = new int(*other.rollNo); // Brand new address, independent value!
+    }
+
+    ~Student() {
+        delete rollNo; // Safe from double-free crashes
+    }
+};</code></pre>
+                </div>
+
+                <div class="space-y-2 pt-2">
+                    <h4 class="font-bold text-white text-base">2. Why Base Destructors MUST Be Virtual</h4>
+                    <p class="text-xs md:text-sm text-gray-300">
+                        If you execute <code>Base* ptr = new Derived(); delete ptr;</code> and the Base destructor is <em>not</em> virtual, the compiler executes only <code>~Base()</code>. Any memory or files opened in <code>Derived</code> will <strong>leak forever</strong>. Always declare: <code>virtual ~Base() {}</code>.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Part 4: Access Specifiers -->
+            <section class="space-y-4">
+                <h3 class="text-2xl font-black text-white tracking-tight flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-blue-600/30 text-blue-400 flex items-center justify-center text-sm">4</span>
+                    Access Specifiers Quick Reference
+                </h3>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-center text-xs md:text-sm border border-white/10 rounded-xl overflow-hidden">
+                        <thead class="bg-white/5 text-gray-300 font-bold border-b border-white/10">
+                            <tr>
+                                <th class="p-2.5 text-left">Specifier</th>
+                                <th class="p-2.5">Inside Same Class</th>
+                                <th class="p-2.5">Derived (Child) Class</th>
+                                <th class="p-2.5">Outside (main function)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/10 text-gray-300">
+                            <tr>
+                                <td class="p-2.5 text-left font-mono font-bold text-green-400">public:</td>
+                                <td class="p-2.5 text-green-400 font-bold">YES</td>
+                                <td class="p-2.5 text-green-400 font-bold">YES</td>
+                                <td class="p-2.5 text-green-400 font-bold">YES</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2.5 text-left font-mono font-bold text-amber-400">protected:</td>
+                                <td class="p-2.5 text-green-400 font-bold">YES</td>
+                                <td class="p-2.5 text-green-400 font-bold">YES</td>
+                                <td class="p-2.5 text-red-400 font-bold">NO</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2.5 text-left font-mono font-bold text-red-400">private:</td>
+                                <td class="p-2.5 text-green-400 font-bold">YES</td>
+                                <td class="p-2.5 text-red-400 font-bold">NO</td>
+                                <td class="p-2.5 text-red-400 font-bold">NO</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Part 5: Top 10 Rapid-Fire Viva Questions -->
+            <section class="space-y-4">
+                <h3 class="text-2xl font-black text-white tracking-tight flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-blue-600/30 text-blue-400 flex items-center justify-center text-sm">5</span>
+                    Top 10 Rapid-Fire Lab Viva Questions
+                </h3>
+
+                <p class="text-gray-300 text-xs md:text-sm">
+                    Memorize these exact 10-second answers for your lab instructor or external examiner:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs md:text-sm">
+                    <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                        <p class="font-bold text-white mb-1">1. Can a constructor be virtual?</p>
+                        <p class="text-gray-400"><strong>No.</strong> A virtual function requires a virtual table pointer (<code>vptr</code>) which only exists after the constructor finishes constructing the object.</p>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                        <p class="font-bold text-white mb-1">2. Can a destructor be virtual?</p>
+                        <p class="text-gray-400"><strong>Yes.</strong> And it must be virtual in base classes to prevent derived class memory leaks when deleting through base pointers.</p>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                        <p class="font-bold text-white mb-1">3. What is a Pure Virtual Function?</p>
+                        <p class="text-gray-400">A function declared as <code>virtual void func() = 0;</code> with no definition in the base class. It forces derived classes to implement it.</p>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                        <p class="font-bold text-white mb-1">4. Can you instantiate an Abstract Class?</p>
+                        <p class="text-gray-400"><strong>No.</strong> You cannot create direct objects of an abstract class. You can only create pointers and references to it.</p>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                        <p class="font-bold text-white mb-1">5. What is the Diamond Problem?</p>
+                        <p class="text-gray-400">Ambiguity in multiple inheritance when a class inherits from two classes that share a common grandparent. Fixed with <code>virtual</code> inheritance.</p>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                        <p class="font-bold text-white mb-1">6. Does a `friend` function break encapsulation?</p>
+                        <p class="text-gray-400"><strong>Yes, technically.</strong> It bypasses <code>private</code> access limits, so use it sparingly (mainly for operator overloading).</p>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                        <p class="font-bold text-white mb-1">7. What is the `this` pointer?</p>
+                        <p class="text-gray-400">An implicit constant pointer passed to non-static member functions holding the memory address of the calling object.</p>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                        <p class="font-bold text-white mb-1">8. Difference between Struct and Class in C++?</p>
+                        <p class="text-gray-400">Default access level only. <code>struct</code> members are <strong>public</strong> by default; <code>class</code> members are <strong>private</strong> by default.</p>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                        <p class="font-bold text-white mb-1">9. What is Object Slicing?</p>
+                        <p class="text-gray-400">When a derived object is assigned by value to a base object (<code>Base b = derivedObj;</code>), slicing off all derived-specific attributes.</p>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                        <p class="font-bold text-white mb-1">10. Can you overload by return type alone?</p>
+                        <p class="text-gray-400"><strong>No.</strong> The compiler requires differences in parameter count, types, or order. Return type alone is not enough.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bottom author note -->
+            <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-400">
+                <p>Created with ❤️ by <strong>Ali Raza Saleem</strong> &bull; Faisalabad, Pakistan</p>
+                <div class="flex items-center gap-2">
+                    <button onclick="window.print()" class="text-blue-400 hover:text-blue-300 font-bold underline">Print PDF Version</button>
+                    <span>&bull;</span>
+                    <a href="#feedback" class="text-blue-400 hover:text-blue-300 font-bold underline">Report Error / Suggest</a>
+                </div>
+            </div>
+
+        </article>
+    </section>
+
+    <!-- SECTION 3: LEARN WITH ALI (THE VISION) -->
+    <section class="w-full max-w-4xl mx-auto px-6 py-12 no-print">
+        <div class="glass-card rounded-3xl p-8 md:p-12 border-blue-500/20 relative overflow-hidden">
+            <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-600/10 blur-[100px] rounded-full pointer-events-none"></div>
+            
+            <div class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">Pillar 2</div>
+            <h2 class="text-2xl md:text-3xl font-black mb-4">Learn With Ali</h2>
+            <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6">
+                Most university slides are dry theory copied from 2005 textbooks. As a BSCS & AI Engineering student in Faisalabad, I test what professors actually ask, what code actually runs, and how these concepts translate into real software tools.
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                <div class="p-4 bg-white/5 rounded-xl border border-white/5">
+                    <div class="text-lg mb-2">🎯</div>
+                    <div class="font-bold text-sm text-white mb-1">No Academic Fluff</div>
+                    <div class="text-xs text-gray-400">Only concepts that appear on exams and job interviews.</div>
+                </div>
+                <div class="p-4 bg-white/5 rounded-xl border border-white/5">
+                    <div class="text-lg mb-2">💻</div>
+                    <div class="font-bold text-sm text-white mb-1">Code & Visual First</div>
+                    <div class="text-xs text-gray-400">Mental models and runnable snippets over paragraphs of text.</div>
+                </div>
+                <div class="p-4 bg-white/5 rounded-xl border border-white/5">
+                    <div class="text-lg mb-2">🇵🇰</div>
+                    <div class="font-bold text-sm text-white mb-1">Student Context</div>
+                    <div class="text-xs text-gray-400">Tailored for Pakistani CS syllabi (FAST, NUCES, GCUF, UET, COMSATS).</div>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 items-center">
+                <a href="https://wa.me/923467282874?text=Salam%20Ali!%20I%20want%20to%20connect%20for%20BSCS%20study%20resources." target="_blank" class="w-full sm:w-auto px-6 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm rounded-xl transition-all shadow-md flex items-center justify-center gap-2">
+                    <span>💬 Connect on WhatsApp</span>
+                    <span>&rarr;</span>
+                </a>
+                <span class="text-xs text-gray-400">Get direct voice-note advice on tough CS concepts.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: STUDENT FEEDBACK LOOP (PILLAR 3) -->
+    <section id="feedback" class="w-full max-w-4xl mx-auto px-6 py-12 mb-16 no-print">
+        <div id="vote-section" class="text-center mb-10">
+            <div class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">Pillar 3 &bull; Student Feedback Loop</div>
+            <h2 class="text-2xl md:text-3xl font-black mb-3">Vote on the Next Resource</h2>
+            <p class="text-sm text-gray-400 max-w-xl mx-auto">
+                I build based on actual student demand, not guesses. Click your biggest pain point to vote:
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 mb-10">
+            <a href="https://wa.me/923467282874?text=Vote:%20Please%20make%20Sheet%202%20on%20Data%20Structures%20(Linked%20Lists%20%26%20Trees)!" target="_blank" class="glass-card p-4 rounded-xl text-center hover:border-blue-400 hover:bg-blue-500/10 transition-all block">
+                <div class="text-2xl mb-1">🌲</div>
+                <div class="font-bold text-sm text-white">DSA: Trees & Lists</div>
+                <div class="text-[11px] text-gray-400 mt-1">Vote via WhatsApp &rarr;</div>
+            </a>
+            <a href="https://wa.me/923467282874?text=Vote:%20Please%20make%20Sheet%202%20on%20Database%20Normalization%20(1NF-BCNF)!" target="_blank" class="glass-card p-4 rounded-xl text-center hover:border-blue-400 hover:bg-blue-500/10 transition-all block">
+                <div class="text-2xl mb-1">🗄️</div>
+                <div class="font-bold text-sm text-white">SQL Normalization</div>
+                <div class="text-[11px] text-gray-400 mt-1">Vote via WhatsApp &rarr;</div>
+            </a>
+            <a href="https://wa.me/923467282874?text=Vote:%20Please%20make%20Sheet%202%20on%20Operating%20Systems%20(Scheduling%20%26%20Deadlocks)!" target="_blank" class="glass-card p-4 rounded-xl text-center hover:border-blue-400 hover:bg-blue-500/10 transition-all block">
+                <div class="text-2xl mb-1">⚙️</div>
+                <div class="font-bold text-sm text-white">OS: Scheduling</div>
+                <div class="text-[11px] text-gray-400 mt-1">Vote via WhatsApp &rarr;</div>
+            </a>
+            <a href="https://wa.me/923467282874?text=Vote:%20Please%20make%20the%2030-Day%20Semester%20Exam%20Study%20Planner!" target="_blank" class="glass-card p-4 rounded-xl text-center hover:border-blue-400 hover:bg-blue-500/10 transition-all block">
+                <div class="text-2xl mb-1">📅</div>
+                <div class="font-bold text-sm text-white">Exam Study Planner</div>
+                <div class="text-[11px] text-gray-400 mt-1">Vote via WhatsApp &rarr;</div>
+            </a>
+        </div>
+
+        <!-- Feedback & Error Reporting box -->
+        <div class="glass-card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 border-white/10">
+            <div class="text-left space-y-1">
+                <h4 class="font-bold text-white text-base">Found a typo, bug, or want a custom topic?</h4>
+                <p class="text-xs text-gray-400">Your feedback directly shapes every revision sheet. Message Ali directly:</p>
+            </div>
+            <a href="https://wa.me/923467282874?text=Hi%20Ali!%20I%20have%20feedback%20or%20a%20request%20for%20the%20Student%20Toolkit:" target="_blank" class="shrink-0 px-6 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold text-xs rounded-xl transition-colors flex items-center gap-2">
+                <span>💬 Send Feedback on WhatsApp</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-10 text-center text-gray-500 text-xs no-print">
+        <p class="mb-2">&copy; 2026 Ali Raza Saleem &bull; Faisalabad, Pakistan</p>
+        <p class="text-[11px] text-gray-600">Created for BSCS, BSSE, and BSIT students across Pakistan.</p>
+        <div class="mt-4 flex justify-center gap-4 text-gray-400 font-semibold">
+            <a href="./index.html" class="hover:text-white transition-colors">ARS Dev Club</a>
+            <span>&bull;</span>
+            <a href="./toolkit.html" class="hover:text-white transition-colors">Student Toolkit</a>
+            <span>&bull;</span>
+            <a href="https://wa.me/923467282874" target="_blank" class="hover:text-white transition-colors">Contact</a>
+        </div>
+    </footer>
+
+    <!-- Client-side Scripts -->
+    <script>
+        function copyCode(button) {
+            const pre = button.parentElement.querySelector('pre');
+            if (!pre) return;
+            navigator.clipboard.writeText(pre.innerText).then(() => {
+                const originalText = button.innerText;
+                button.innerText = '✅ Copied!';
+                button.classList.add('bg-green-600');
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.classList.remove('bg-green-600');
+                }, 2000);
+            });
+        }
+
+        function copyCurrentUrl() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                const btn = document.getElementById('share-btn');
+                const original = btn.innerHTML;
+                btn.innerHTML = '<span>✅ Link Copied!</span>';
+                setTimeout(() => {
+                    btn.innerHTML = original;
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

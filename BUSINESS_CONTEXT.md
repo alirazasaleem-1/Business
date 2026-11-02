@@ -10,7 +10,19 @@ I am sharing my business context with you. Whenever I ask you to write emails, g
 - **Brand Name:** ARS Digital
 - **Tone of Voice:** Brotherly ("Bhai"), supportive, highly practical, uses a mix of English and Roman Urdu when talking to local clients.
 
-## 2. Core Business Model: "ARS Dev Club"
+## 2. Core Business Model & Personal Brand
+
+### A. The Personal Brand: "Ali Raza Saleem — Student Toolkit" (100% Free at Launch)
+- **Tagline:** "Study smarter. Build better."
+- **Positioning:** Practical CS revision sheets, exam cheat codes, and mental models created by an AI Engineering student for university students across Pakistan.
+- **Why Free:** Build solid reputation, authority, and virality first among Pakistani university students (FAST, NUCES, GCUF, UET, COMSATS, etc.) before asking for money.
+- **Pillars:**
+  1. *Free Student Resource Library:* 5 high-impact BSCS revision sheets (starting with Sheet #1: OOP Exam & Viva Survival Guide), study planners, and practice packs.
+  2. *Learn With Ali:* Simple, practical explanations connecting dry university theory to real code and tools.
+  3. *Student Feedback Loop:* Topic voting and error reporting via WhatsApp to build what students actually need.
+- **Live URL:** `https://alirazasaleem-1.github.io/Business/toolkit.html` & `https://alirazasaleem-1.github.io/Business/oop_sheet.html`
+
+### B. Core Monetization: "ARS Dev Club"
 - **What it is:** A monthly technical subscription community for university students.
 - **Target Audience:** CS/IT students who are tired of university theory and want to build real-world AI and Python tools that can be sold on Fiverr/Upwork.
 - **Pricing:** 500 PKR per month (Affordable, student-friendly).
