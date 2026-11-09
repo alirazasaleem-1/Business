@@ -9,7 +9,7 @@
     <meta property="og:type" content="website">
     <title>Student Resume &amp; Portfolio Services | ARS Digital</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -36,6 +36,11 @@
         [class~="hover:bg-gray-200"]:hover { background-color: #2A9D8F !important; color: #F4EDE4 !important; }
         [class~="border-white/10"], [class~="border-white/20"], [class~="border-blue-500/20"], [class~="border-blue-500/40"] { border-color: rgba(42,157,143,.28) !important; }
         [class~="bg-black/50"] { background-color: rgba(42,157,143,.08) !important; }
+    
+        body { font-family: "DM Sans", Arial, sans-serif !important; }
+        h1, h2, h3, h4 { font-family: "Manrope", Arial, sans-serif !important; }
+        h1 em { color: #E76F51; font: italic 500 1em/1.05 Georgia, "Times New Roman", serif; }
+        .brush-note { margin: 18px 0 0; color: #E76F51; font: 20px/1.2 "Permanent Marker", cursive; transform: rotate(-2deg); }
     </style>
 </head>
 <body class="antialiased min-h-screen selection:bg-blue-500/30">
@@ -51,12 +56,13 @@
     <main class="max-w-6xl mx-auto px-5 py-14 md:py-20">
         <section class="max-w-3xl mx-auto text-center">
             <p class="inline-flex px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-sm font-bold mb-6">For university students &amp; fresh graduates</p>
-            <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight">Make your next opportunity easier to see.</h1>
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight">Make your next opportunity <em>easier to see.</em></h1>
             <p class="text-lg text-gray-300 mt-6 leading-relaxed">Get a clear, role-focused resume and a portfolio website that presents your real projects, skills, and experience.</p>
             <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#packages" class="px-7 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-black transition-colors">View packages</a>
                 <a href="https://alirazasaleem-1.github.io/Ali-s---Portfolio-/" target="_blank" rel="noopener noreferrer" class="px-7 py-4 rounded-xl border border-white/20 hover:bg-white/5 text-white font-bold transition-colors">See my portfolio example ↗</a>
             </div>
+            <p class="brush-note">Made around your real story</p>
             <p class="mt-4 text-xs text-gray-500">Your experience stays yours. I help organize and present it; I don’t invent qualifications or guarantee a job.</p>
         </section>
 
