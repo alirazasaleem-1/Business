@@ -41,6 +41,26 @@
         h1, h2, h3, h4 { font-family: "Manrope", Arial, sans-serif !important; }
         h1 em { color: #E76F51; font: italic 500 1em/1.05 Georgia, "Times New Roman", serif; }
         .brush-note { margin: 18px 0 0; color: #E76F51; font: 20px/1.2 "Permanent Marker", cursive; transform: rotate(-2deg); }
+
+        @keyframes package-rise { from { opacity: 0; transform: perspective(900px) translateY(18px) rotateX(3deg); } to { opacity: 1; transform: perspective(900px) translateY(0) rotateX(0); } }
+        @keyframes care-glow { 0%,100% { box-shadow: 0 8px 24px rgba(38,70,83,.05); } 50% { box-shadow: 0 14px 34px rgba(42,157,143,.12); } }
+        #packages article { position: relative; transform-style: preserve-3d; backface-visibility: hidden; animation: package-rise .65s cubic-bezier(.2,.7,.2,1) both; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+        #packages article:nth-child(2) { animation-delay: .1s; }
+        #packages article:nth-child(3) { animation-delay: .2s; }
+        #packages article:hover { transform: perspective(900px) translateY(-8px) rotateX(2deg); box-shadow: 0 20px 42px rgba(38,70,83,.14); border-color: rgba(231,111,81,.6); }
+        #packages article li { transition: transform .2s ease; }
+        #packages article:hover li { transform: translateZ(5px); }
+        #packages article a, main section > a { transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease; }
+        #care-heading { animation: care-glow 7s ease-in-out infinite; }
+        @media (max-width: 767px) {
+            #packages article { animation-duration: .5s; }
+            #packages article:hover { transform: translateY(-3px); }
+            #packages article:active { transform: scale(.99); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+            #packages article:hover, #packages article:active { transform: none !important; }
+        }
     </style>
 </head>
 <body class="antialiased min-h-screen selection:bg-blue-500/30">
