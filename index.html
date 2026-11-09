@@ -152,7 +152,47 @@
             .cta { padding: 65px 0; }
             .footer-inner { align-items: flex-start; flex-direction: column; }
         }
-        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+
+        /* Lightweight 3D depth and motion */
+        @keyframes rise-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes float-card { 0%,100% { transform: translateY(0) rotateX(5deg) rotateY(-8deg) rotateZ(1deg); } 50% { transform: translateY(-10px) rotateX(2deg) rotateY(-4deg) rotateZ(0deg); } }
+        @keyframes orbit-breathe { 0%,100% { transform: scale(.96); opacity: .7; } 50% { transform: scale(1.04); opacity: 1; } }
+        @keyframes tag-float { 0%,100% { transform: translateY(0) rotate(1deg); } 50% { transform: translateY(-7px) rotate(-1deg); } }
+        .hero-grid > div:first-child { animation: rise-in .75s cubic-bezier(.2,.7,.2,1) both; }
+        .visual { perspective: 1200px; transform-style: preserve-3d; }
+        .visual-orbit { animation: orbit-breathe 8s ease-in-out infinite; }
+        .portfolio-card { transform-style: preserve-3d; will-change: transform; animation: float-card 8s ease-in-out infinite; }
+        .portfolio-card > * { transform: translateZ(12px); }
+        .floating-tag { animation: tag-float 5s ease-in-out infinite; }
+        .service { perspective: 900px; transform-style: preserve-3d; transition: transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s ease, border-color .28s ease; }
+        .service-icon { transition: transform .28s ease, background-color .28s ease; }
+        .button, .nav-cta { box-shadow: 0 8px 18px rgba(38,70,83,.12); transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease; }
+        .proof-point { transition: transform .24s ease, background-color .24s ease; }
+        @media (hover: hover) and (pointer: fine) {
+            .portfolio-card:hover { animation-play-state: paused; transform: translateY(-5px) rotateX(0deg) rotateY(-3deg) rotateZ(0deg); }
+            .service:hover { transform: perspective(900px) translateY(-8px) rotateX(2deg); border-color: rgba(42,157,143,.6); box-shadow: 0 18px 35px rgba(38,70,83,.12); }
+            .service:hover .service-icon { transform: translateZ(18px) rotate(-5deg) scale(1.08); background: rgba(231,111,81,.16); }
+            .button:hover, .nav-cta:hover { transform: translateY(-2px) scale(1.015); box-shadow: 0 14px 28px rgba(38,70,83,.18); }
+            .proof-point:hover { transform: translateY(-4px) rotateX(2deg); background: rgba(244,237,228,.09); }
+        }
+        @media (max-width: 800px) {
+            .visual { perspective: 900px; }
+            .portfolio-card { animation-duration: 10s; }
+        }
+        @media (max-width: 620px) {
+            .hero-grid > div:first-child { animation-duration: .55s; }
+            .visual { min-height: 345px; perspective: 700px; }
+            .portfolio-card { width: min(370px, 88%); animation-duration: 11s; }
+            .floating-tag { right: 4px; bottom: 12px; }
+            .service { transform: none; }
+            .service:active { transform: scale(.985); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+            .portfolio-card, .visual-orbit, .floating-tag, .hero-grid > div:first-child { transform: none !important; }
+        }
     </style>
 </head>
 <body>
